@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016,2017
-lastupdated: "2017-05-24"
+lastupdated: "2017-07-13"
 ---
 
 {:new_window: target="_blank"}
@@ -19,18 +19,26 @@ ScyllaDB is an in-place replacement for the Cassandra wide-column distributed da
 
 **Note:** {{site.data.keyword.composeForScyllaDB_full}} does not give access to the Compose UI. See [Compose on Bluemix Support](https://help.compose.com/docs/bluemix-compose-support) for more details.
 
-Complete these steps to get started with {{site.data.keyword.composeForScyllaDB}}:
+## Creating a Compose for ScyllaDB service instance
 
-1. [Create a {{site.data.keyword.composeForScyllaDB}} instance](https://console.ng.bluemix.net/catalog/services/compose-for-scylladb/).
+[Create a {{site.data.keyword.composeForScyllaDB}} instance](https://console.ng.bluemix.net/catalog/services/compose-for-scylladb/).
 
-   When you create an instance of the service, choose both a name for your service and a credential name. Leave the service unbound; you can connect an application to your service later by using the credentials that are provided when the service is provisioned. The various credential values are listed in the "Available credentials" section.
+When you create an instance of the service, choose both a name for your service and a credential name. Leave the service unbound; you can connect an application to your service later by using the credentials that are provided when the service is provisioned. The various credential values are listed in the "Available credentials" section.
 
-   When you provision your {{site.data.keyword.composeForScyllaDB}} instance you can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForScyllaDB}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [Compose Enterprise documentation](../ComposeEnterprise/index.html) for more details.
+When you provision your {{site.data.keyword.composeForScyllaDB}} instance you can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForScyllaDB}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [Compose Enterprise documentation](../ComposeEnterprise/index.html) for more details.
 
-2. Connect to your {{site.data.keyword.composeForScyllaDB}} service.
+## Managing Compose for ScyllaDB
 
-   To connect an application to your service, use the [credentials](./credentials.html) that are created along with the service.
+You can manage your service from the service dashboard. Here you can find information about your Bluemix Compose database and how to connect to it. You can also manage your backups from the dashboard. For more information, see [Dashboard Overview](./dashboard-overview.html) and [Backups](./managing-backups.html).
 
-   Download the [compose-scylladb-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-scylladb-helloworld-nodejs) sample application and follow the instructions in the readme file. Then, on the application details page in the Bluemix console, click **View APP**.
+## Connecting to Compose for ScyllaDB
 
-   The sample application demonstrates how to use Node.js to connect to a {{site.data.keyword.composeForScyllaDB}} service.
+You can connect to your service using the credentials that are created along with the service, or with the connection strings and command line that are provided in the *Overview* tab of your service dashboard.
+
+## Connecting a Bluemix application to Compose for ScyllaDB
+
+To connect a Bluemix application to your service, use the credentials that are created along with the service. You can find information on how to connect a Bluemix application to a {{site.data.keyword.composeForScyllaDB}} service in [Connecting a Bluemix Application](./connecting-bluemix-app.html).
+
+## Connecting to Compose for ScyllaDB from outside Bluemix
+
+If you want to connect to {{site.data.keyword.composeForScyllaDB}} from outside Bluemix, you can use the provided connection strings or command line. You can find information on how to connect in [Connecting an external application](./connecting-external.html).
