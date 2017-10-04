@@ -19,11 +19,11 @@ The _Overview_ page shows you information about your Bluemix Compose database. T
 
 The _Deployment Details_ panel shows details of your service.
 
-![Deployment Details](./images/deployment-details.png "A view of the Deployment Details panel")
+![Deployment Details](./images/scylla-deployment-details.png "A view of the Deployment Details panel")
 
 ### Type
 
-The type of database that is offered by the service; in this case `ScyllaDB`.
+The type of database that is offered by the service, and the database version that your service uses.
 
 ### Name
 
@@ -32,10 +32,6 @@ An internal identifier for the service.
 ### Usage
 
 The size of your database and the amount of storage provided by your service plan.
-
-### Version
-
-The database version that your service uses.
 
 ### Scale Resouces
 
@@ -52,13 +48,10 @@ A URI-formatted connection string that can be used by some client libraries and 
 
 ### Command Line
 
-The **Command Line** is a preformatted command which will invoke `cqlsh` with the correct parameters. To use it, you'll need to have the PostgreSQL client tools installed on the local system. You can find out more about how to do this in [Connecting an external application](./connecting-external.html).
+The **Command Line** is a preformatted command which will invoke `cqlsh` with the correct parameters. The displayed command include required flags (`--ssl` and `--cqlversion`).  To use it, you'll need to have the PostgreSQL client tools installed on the local system. You can find out more about how to do this in [Connecting an external application](./connecting-external.html).
 
 ### Maps
-
-### Socks
-
-### Nodetool
+These address translation maps can be used in applications that require high-availability and can use auto-discovery to find nodes in the cluster. They translate the external portal addresses to the internal cluster addresses for client drivers that use this feature.
 
 ### SSL Certificate
 
