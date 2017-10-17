@@ -14,7 +14,8 @@ Compose For ScyllaDB
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
-	dashboard-scaling-resources.md	
+	dashboard-scaling-resources.md
+	dashboard-whitelists.md
 
 	{: .topicgroup}
 	Connecting to Compose for Scylla
