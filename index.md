@@ -17,7 +17,7 @@ lastupdated: "2017-07-13"
 ScyllaDB is an in-place replacement for the Cassandra wide-column distributed database. ScyllaDB is written in C++, rather than Cassandra's Java, for better resource usage that can result in 10 times better performance in benchmarks. In addition to retaining compatibility with Cassandra tool and data files, ScyllaDB adds self-tuning capabilities. {{site.data.keyword.composeForScyllaDB_full}} extends the capabilities of ScyllaDB by managing it for you, offering an easy, auto-scaling deployment system that delivers high availability and redundancy, plus automated backups.
 {:shortdesc}
 
-**Note:** {{site.data.keyword.composeForScyllaDB_full}} does not give access to the Compose UI. See [Compose on Bluemix Support](https://help.compose.com/docs/bluemix-compose-support) for more details.
+**Note:** {{site.data.keyword.composeForScyllaDB_full}} does not give access to the Compose UI. See [Compose on {{site.data.keyword.Bluemix_notm}} Support](https://help.compose.com/docs/bluemix-compose-support) for more details.
 
 ## Creating a Compose for ScyllaDB service instance
 
@@ -29,16 +29,22 @@ When you provision your {{site.data.keyword.composeForScyllaDB}} instance you ca
 
 ## Managing Compose for ScyllaDB
 
-You can manage your service from the service dashboard. Here you can find information about your Bluemix Compose database and how to connect to it. You can also manage your backups, allocate more resources for your service, and use whitelists to restrict access to your databases. For more information, see [Service Overview](./dashboard-overview.html), [Backups](./dashboard-backups.html), [Scaling Resources](./dashboard-scaling-resources.html), and [Whitelists](./dashboard-whitelists.html).
+You can manage your service from the service dashboard. Here you can find information about your {{site.data.keyword.Bluemix_notm}} Compose database and how to connect to it. You can also:
+
+- manage your backups
+- allocate more resources for your service 
+- use whitelists to restrict access to your databases. 
+
+For more information, see [Settings](./dashboard-settings.html).
 
 ## Connecting to Compose for ScyllaDB
 
 You can connect to your service using the credentials that are created along with the service, or with the connection strings and command line that are provided in the *Overview* tab of your service dashboard.
 
-## Connecting a Bluemix application to Compose for ScyllaDB
+## Connecting a {{site.data.keyword.Bluemix_notm}} application to Compose for ScyllaDB
 
-To connect a Bluemix application to your service, use the credentials that are created along with the service. You can find information on how to connect a Bluemix application to a {{site.data.keyword.composeForScyllaDB}} service in [Connecting a Bluemix Application](./connecting-bluemix-app.html).
+To connect a {{site.data.keyword.Bluemix_notm}} application to your service, use the credentials that are created along with the service. You can find information on how to connect a {{site.data.keyword.Bluemix_notm}} application to a {{site.data.keyword.composeForScyllaDB}} service in [Connecting a {{site.data.keyword.Bluemix_notm}} Application](./connecting-bluemix-app.html).
 
-## Connecting to Compose for ScyllaDB from outside Bluemix
+## Connecting to Compose for ScyllaDB from outside {{site.data.keyword.Bluemix_notm}}
 
-If you want to connect to {{site.data.keyword.composeForScyllaDB}} from outside Bluemix, you can use the provided connection strings or command line. You can find information on how to connect in [Connecting an external application](./connecting-external.html).
+If you want to connect to {{site.data.keyword.composeForScyllaDB}} from outside {{site.data.keyword.Bluemix_notm}}, you can use the provided connection strings or command line. You can find information on how to connect in [Connecting an external application](./connecting-external.html).
