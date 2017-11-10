@@ -14,7 +14,7 @@ lastupdated: "2017-10-23"
 
 # Settings
 
-These features allow you to adapt your {{site.data.keyword.composeForScyllaDB}} service to better suit your needs and requirements.
+These features allow you to adapt your {{site.data.keyword.composeForScyllaDB_full}} service to better suit your needs and requirements.
 
 
 ## Upgrade Version

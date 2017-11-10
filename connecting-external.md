@@ -14,7 +14,7 @@ lastupdated: "2017-06-16"
 # Connecting an external application
 {: #connecting-external-app}
 
-You can find the information you need to connect to {{site.data.keyword.composeForScyllaDB}} on the *Overview* page of your {{site.data.keyword.composeForPostgreSQL}} service.
+You can find the information you need to connect to {{site.data.keyword.composeForScyllaDB_full}} on the *Overview* page of your {{site.data.keyword.composeForPostgreSQL_full}} service.
 
 You can connect directly to {{site.data.keyword.composeForScyllaDB}} using `cqlsh`. How you get this tool onto your local device depends on your local platform. The easiest is to install the latest Cassandra release using an appropriate method for your platform (the latest versions still support version 2.1.8 which is what Scylla is) and use the builtin `cqlsh` command.
 
