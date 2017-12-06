@@ -6,11 +6,17 @@ Compose For ScyllaDB
 
 	{: .navgroup id="learn"}
 	index.md
-	credentials.md
 
-	{: .topicgroup }
-	Enlaces relacionados
-		[App Node.js de ejemplo](https://github.com/IBM-Bluemix/compose-scylladb-helloworld-nodejs)
-		[Ayuda de Compose](https://help.compose.com)
-		[Artículos de Compose](https://www.compose.com/articles/)
+	{: .topicgroup}
+	El panel del control del servicio
+		dashboard-overview.md
+		dashboard-backups.md
+		dashboard-settings.md
+	{: .navgroup-end}
+
+	{: .navgroup id="howto"}
+	{: .topicgroup}
+	Conexión a Compose for Scylla
+		connecting-bluemix-app.md
+		connecting-external.md
 	{: .navgroup-end}
