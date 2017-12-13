@@ -2,7 +2,7 @@
 
 Copyright:
   Years: 2017
-lastupdated: "2017-10-23"
+lastupdated: "2017-12-11"
 ---
 
 {:new_window: target="_blank"}
@@ -61,3 +61,11 @@ Whitelist entries are automatically added to Compose's servers to allow them to 
 ### Removal
 To remove an IP address or netmask from the Whitelist, click the *Remove* entry displayed next to it.
 When all entries on the whitelist are removed, the whitelist will be disabled and all IP addresses will be accepted by the TCP access portals.
+
+
+## SSH Keys
+Scylla services are provisioned with an SSH portal to enable nodetool administration of the service. Add the public key and a name to get access to the SSH portal.
+
+![SSH Keys](./images/scylla-portal-ssh-show.png "The SSH Key fields.")
+
+Information on how nodetool works with your scylla service is in [Using Nodetool](./scylla-nodetool.html).

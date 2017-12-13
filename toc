@@ -15,6 +15,8 @@ Compose For ScyllaDB
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
+	scylla-nodetool.md
+
 	{: .topicgroup}
 	Connecting to Compose for Scylla
 		connecting-bluemix-app.md

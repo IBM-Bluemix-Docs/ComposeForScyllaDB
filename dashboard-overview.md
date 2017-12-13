@@ -2,7 +2,7 @@
 
 Copyright:
   Years: 2017
-lastupdated: "2017-11-15"
+lastupdated: "2017-12-11"
 ---
 
 {:new_window: target="_blank"}
@@ -52,9 +52,8 @@ The **Command Line** is a preformatted command which will invoke `cqlsh` with th
 ### Maps
 These address translation maps can be used in applications that require high-availability and can use auto-discovery to find nodes in the cluster. They translate the external portal addresses to the internal cluster addresses for client drivers that use this feature.
 
-### SSL Certificate
-
-Your Compose {{site.data.keyword.cloud_notm}} service provides you with an SSL certificate that you can use to connect to your database.
+### Socks and Nodetool
+In order to enable nodetool administration of Scylla, the service comes with an SSH capsule configured as a SOCKS proxy. You need to add an SSH key to your deployment in order to use the proxy. You can find out more in [Using Nodetool](./scylla-nodetool.html).
 
 
 ## Instance Administration API
