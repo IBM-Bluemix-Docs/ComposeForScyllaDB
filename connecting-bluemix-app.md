@@ -13,11 +13,11 @@ lastupdated: "2017-06-16"
 
 # Connecting an {{site.data.keyword.cloud_notm}} application
 
-To connect an {{site.data.keyword.cloud}} application to your service, use the service credentials that are created when the service is provisioned. The sample app demonstrates how to use Node.js to connect to a {{site.data.keyword.composeForPostgreSQL_full}} service using the provided credentials, and how to create a database and read from and write to the database.
+To connect an {{site.data.keyword.cloud}} application to your service, use the service credentials that are created when the service is provisioned. The sample app demonstrates how to use Node.js to connect to a {{site.data.keyword.composeForScyllaDB_full}} service using the provided credentials, and how to create a database and read from and write to the database.
 
 ## Connecting using the 'Hello World' sample app
 
-The [compose-scylladb-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-scylladb-helloworld-nodejs) sample app demonstrates how to use Node.js to connect to a {{site.data.keyword.composeForScyllaDB}} service using the provided credentials. The application creates, reads from, and writes to a database
+The [compose-scylladb-helloworld-nodejs](https://github.com/IBM-Cloud/compose-scylladb-helloworld-nodejs) sample app demonstrates how to use Node.js to connect to a {{site.data.keyword.composeForScyllaDB}} service using the provided credentials. The application creates, reads from, and writes to a database
 
 Download the sample app and follow the instructions in the readme file. Then, in your application details page in {{site.data.keyword.cloud_notm}}, click **View APP** to view the contents of the *examples* table.
 

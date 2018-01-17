@@ -17,8 +17,6 @@ lastupdated: "2017-07-13"
 ScyllaDB is an in-place replacement for the Cassandra wide-column distributed database. ScyllaDB is written in C++, rather than Cassandra's Java, for better resource usage that can result in 10 times better performance in benchmarks. In addition to retaining compatibility with Cassandra tool and data files, ScyllaDB adds self-tuning capabilities. {{site.data.keyword.composeForScyllaDB_full}} extends the capabilities of ScyllaDB by managing it for you, offering an easy, auto-scaling deployment system that delivers high availability and redundancy, plus automated backups.
 {:shortdesc}
 
-**Note:** {{site.data.keyword.composeForScyllaDB_full}} does not give access to the Compose UI. See [Compose on {{site.data.keyword.cloud}} Support](https://help.compose.com/docs/bluemix-compose-support) for more details.
-
 ## Creating a Compose for ScyllaDB service instance
 
 [Create a {{site.data.keyword.composeForScyllaDB}} instance](https://console.ng.bluemix.net/catalog/services/compose-for-scylladb/).
