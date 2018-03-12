@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  Years: 2017
-lastupdated: "2017-09-07"
+  years: 2017,2018
+lastupdated: "2017-12-11"
 ---
 
 {:new_window: target="_blank"}
@@ -23,7 +23,7 @@ Le panneau _Deployment Details_ affiche des détails concernant votre déploieme
 
 ### Type
 
-Type de base de données fourni par le service et version de base de données qu'utilise votre service.
+Type de base de données fourni par le service et version de base de données qu'utilise votre service. Lorsqu'une version plus récente de la base de données est disponible, une notification s'affiche, accompagnée d'un lien vers la section [Mise à niveau de la version](/docs/services/ComposeForScyllaDB/dashboard-settings.html#upgrade-version) du tableau de bord de votre service.
 
 ### Nom
 
@@ -33,6 +33,9 @@ Identificateur interne du service.
 
 Taille de votre base de données et quantité de stockage fournie par le plan de service.
 
+## Travaux en cours
+
+Toute modification administrative (telle une mise à l'échelle ou une sauvegarde manuelle) démarre un travail. Pendant l'exécution d'un travail, le panneau _Current Jobs_, qui indique le nom du travail et présente une barre de progression, s'affiche sur la page _Vue d'ensemble_. Une fois le travail achevé, le panneau _Current Jobs_ disparaît de la page _Vue d'ensemble_.
 
 ## Chaînes de connexion
 
@@ -49,6 +52,22 @@ Une **ligne de commande** est une commande préformatée qui appellera `cqlsh` a
 ### Mappes
 Ces mappes de conversion d'adresse peuvent être utilisées dans les applications qui nécessitent la haute disponibilité. Elles peuvent utiliser la reconnaissance automatique pour rechercher des noeuds dans le cluster. Elles convertissent les adresses de portail externes en adresses de cluster internes pour les pilotes de client qui utilisent cette fonctionnalité.
 
-### Certificat SSL
+### Sockets et Nodetool
+Afin de pouvoir activer l'administration nodetool de Scylla, le service est livré avec une capsule SSH configurée en tant que proxy SOCKS. Vous devez ajouter une clé SSH à votre déploiement pour utiliser le proxy. Pour plus d'informations, voir [Utilisation de Nodetool](./scylla-nodetool.html).
 
-Le service Compose {{site.data.keyword.cloud_notm}} vous fournit un certificat SSL qui vous permet de vous connecter à votre base de données.
+
+## API d'administration d'instance
+
+Vous pouvez gérer votre service {{site.data.keyword.composeForScyllaDB}} via l'API {{site.data.keyword.cloud_notm}} Compose.
+
+### Noeud final Foundation
+
+Le noeud final Foundation est composé de la région où réside le service et de l'ID d'instance du service. Il se trouvera au début de chaque noeud final.
+
+### ID de déploiement
+
+L'ID de déploiement est nécessaire pour la plupart des appels ; il identifie l'instance de déploiement spécifique.
+
+### Référence
+
+Pour plus de documentation et de référence sur l'utilisation de l'API {{site.data.keyword.cloud_notm}} Compose au sein de tous les services {{site.data.keyword.cloud_notm}} Compose, voir [API {{site.data.keyword.cloud_notm}} Compose](https://www.compose.com/articles/the-ibm-cloud-compose-api/).

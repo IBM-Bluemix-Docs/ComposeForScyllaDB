@@ -1,7 +1,7 @@
 ---
 
-Copyright:
-  Years: 2016,2017
+copyright:
+  years: 2016,2018
 lastupdated: "2017-06-16"
 ---
 
@@ -13,11 +13,11 @@ lastupdated: "2017-06-16"
 
 # Conectando um aplicativo {{site.data.keyword.cloud_notm}}
 
-Para conectar um aplicativo {{site.data.keyword.cloud}} a seu serviço, use as credenciais de serviço que são criadas quando o serviço é provisionado. O aplicativo de amostra demostra como usar o Node.js para se conectar a um serviço {{site.data.keyword.composeForPostgreSQL_full}} usando as credenciais fornecidas e como criar um banco de dados e ler e gravar no banco de dados.
+Para conectar um aplicativo {{site.data.keyword.cloud}} a seu serviço, use as credenciais de serviço que são criadas quando o serviço é provisionado. O aplicativo de amostra demostra como usar o Node.js para se conectar a um serviço {{site.data.keyword.composeForScyllaDB_full}} usando as credenciais fornecidas e como criar um banco de dados e ler e gravar no banco de dados.
 
 ## Conectando usando o aplicativo de amostra 'Hello World'
 
-O aplicativo de amostra [compose-scylladb-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-scylladb-helloworld-nodejs) demonstra como usar o Node.js para se conectar a um serviço {{site.data.keyword.composeForScyllaDB}} usando as credenciais fornecidas. O aplicativo cria, lê e grava em um banco de dados
+O app de amostra [compose-scylladb-helloworld-nodejs](https://github.com/IBM-Cloud/compose-scylladb-helloworld-nodejs) demonstra como usar Node.js para se conectar a um serviço {{site.data.keyword.composeForScyllaDB}} usando as credenciais fornecidas. O aplicativo cria, lê e grava em um banco de dados
 
 Faça download do aplicativo de amostra e siga as instruções no arquivo leia-me. Em seguida, em sua página de detalhes do aplicativo no {{site.data.keyword.cloud_notm}}, clique em **Visualizar app** para visualizar os conteúdos da tabela *exemplos*.
 

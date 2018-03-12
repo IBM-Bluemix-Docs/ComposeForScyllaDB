@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017,2018
 lastupdated: "2017-06-16"
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2017-06-16"
 # Externe Anwendung verbinden
 {: #connecting-external-app}
 
-Sie finden die Informationen, die Sie zum Herstellen einer Verbindung zu {{site.data.keyword.composeForScyllaDB_full}} benötigen, auf der Seite *Übersicht* Ihres {{site.data.keyword.composeForPostgreSQL_full}}-Service. 
+Sie finden die Informationen, die Sie zum Herstellen einer Verbindung zu {{site.data.keyword.composeForScyllaDB_full}} benötigen, auf der Seite *Übersicht* Ihres {{site.data.keyword.composeForPostgreSQL_full}}-Service.
 
 Sie können mit `cqlsh` eine Direktverbindung zu {{site.data.keyword.composeForScyllaDB}} herstellen. Wie Sie dieses Tool auf Ihre lokale Einheit abrufen, hängt von Ihrer lokalen Plattform ab. Am einfachsten ist es, das neueste Cassandra-Release mit einer für Ihre Plattform geeigneten Methode zu installieren (die neuesten Versionen unterstützen weiterhin Version 2.1.8, also Scylla) und den integrierten Befehl `cqlsh` zu verwenden.
 

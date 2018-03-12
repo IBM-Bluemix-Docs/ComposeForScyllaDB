@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  Years: 2017
-lastupdated: "2017-09-07"
+  years: 2017,2018
+lastupdated: "2017-12-11"
 ---
 
 {:new_window: target="_blank"}
@@ -23,7 +23,7 @@ _部署详细信息_面板显示服务的详细信息。
 
 ### 类型
 
-服务所提供的数据库类型，以及服务所使用的数据库版本。
+服务所提供的数据库类型，以及服务所使用的数据库版本。如果有更新的数据库版本可用，那么会显示通知以及指向服务仪表板中[升级版本](/docs/services/ComposeForScyllaDB/dashboard-settings.html#upgrade-version)部分的链接。
 
 ### 名称
 
@@ -33,6 +33,9 @@ _部署详细信息_面板显示服务的详细信息。
 
 数据库的大小和服务套餐所提供的存储量。
 
+## 当前作业
+
+对服务进行管理更改（例如，扩展或执行手动备份）会启动作业。作业正在运行时，_当前作业_面板会显示在_概述_页面上，其中显示作业名和进度条。作业完成后，_当前作业_面板即不会再显示在_概述_页面上。
 
 ## 连接字符串
 
@@ -49,6 +52,22 @@ _部署详细信息_面板显示服务的详细信息。
 ### 映射
 这些地址转换映射可以在需要高可用性的应用程序中使用，并且可以使用自动发现来查找集群中的节点。他们将外部门户网站地址转换为使用此功能的客户机驱动程序的内部集群地址。
 
-### SSL 证书
+### Socks 和 Nodetool
+为了支持 nodetool 对 Scylla 进行管理，该服务随附配置为 SOCKS 代理的 SSH 封装体。您需要将 SSH 密钥添加到部署才能使用该代理。您可以在[使用 Nodetool](./scylla-nodetool.html) 中找到更多信息。
 
-您的 Compose {{site.data.keyword.cloud_notm}} 服务为您提供了可用于连接到数据库的 SSL 证书。
+
+## 实例管理 API
+
+您可以通过 {{site.data.keyword.cloud_notm}} Compose API 来管理 {{site.data.keyword.composeForScyllaDB}} 服务。
+
+### 基础端点
+
+基础端点由服务所在的区域和服务实例标识组成。基础端点将位于每个端点的开头。
+
+### 部署标识
+
+部署标识对于大多数调用都是必需的，用于标识特定的部署实例。
+
+### 参考
+
+有关在所有 {{site.data.keyword.cloud_notm}} Compose 服务上使用 {{site.data.keyword.cloud_notm}} Compose API 的更多文档和参考信息，请参阅 [{{site.data.keyword.cloud_notm}} Compose API](https://www.compose.com/articles/the-ibm-cloud-compose-api/)。

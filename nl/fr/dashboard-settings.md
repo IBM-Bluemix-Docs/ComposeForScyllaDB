@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  Years: 2017
-lastupdated: "2017-10-23"
+  years: 2017,2018
+lastupdated: "2017-12-11"
 ---
 
 {:new_window: target="_blank"}
@@ -33,11 +33,9 @@ Si votre service a besoin de plus d'espace de stokage, ou si vous voulez limiter
     ![Page Scale Resources](./images/scylla-scale-show.png "Page Scale Resources")
 
 3. Déplacez le curseur sur la règle pour augmenter ou diminuer la quantité de stockage allouée au service {{site.data.keyword.composeForScyllaDB}}. Déplacez-le vers la gauche pour diminuer la quantité de stockage ou vers la droite pour l'augmenter.
-4. Cliquez sur **Scale Deployment** pour lancer le processus de mise à l'échelle et revenir dans la vue d'ensemble du tableau de bord. Un message 'Scaling initiated' s'affiche en haut de la page pour vous indiquer que la remise à l'échelle est en cours. 
+4. Cliquez sur **Scale Deployment** pour lancer le processus de mise à l'échelle et revenir dans la vue d'ensemble du tableau de bord. 
 
-    ![Message de remise à l'échelle](./images/jobs-scaling.png "Message indiquant qu'une remise à l'échelle est en cours.")
-
-    Une fois la mise à l'échelle terminée, le panneau _Deployment Details_ est actualisé pour afficher l'utilisation actuelle et la nouvelle valeur de stockage disponible.
+Une fois la mise à l'échelle terminée, le panneau _Deployment Details_ est actualisé pour afficher l'utilisation actuelle et la nouvelle valeur de stockage disponible.
 
 
 ## Utilisation des listes blanches
@@ -63,3 +61,11 @@ Les entrées d'une liste blanche sont automatiquement ajoutées aux serveurs de 
 ### Suppression
 Pour supprimer une adresse IP ou un masque de réseau de la liste blanche, cliquez sur l'entrée *Retirer* en regard de l'élément à supprimer.
 Lorsque toutes les entrées d'une liste blanche ont été supprimées, la liste est désactivée et toutes les adresses IP sont acceptées par les portails d'accès TCP.
+
+
+## Clés SSH
+Les services Scylla sont mis à disposition avec un portail SSH de manière à activer l'administration via nodetool du service. Ajoutez la clé publique et un nom pour accéder au portail SSH.
+
+![Clés SSH](./images/scylla-portal-ssh-show.png "Zones de clé SSH.")
+
+Pour plus d'informations sur le fonctionnement de nodetool avec votre service Scylla, [Utilisation de Nodetool](./scylla-nodetool.html).

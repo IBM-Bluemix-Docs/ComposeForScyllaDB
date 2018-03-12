@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016,2017
+  years: 2016,2018
 lastupdated: "2017-07-13"
 ---
 
@@ -11,23 +11,21 @@ lastupdated: "2017-07-13"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# 開始使用 Compose for ScyllaDB
-{: #getting-started-with-compose-for-scylladb}
+# 關於 {{site.data.keyword.composeForScyllaDB}}
+{: #about-compose-for-scylladb}
 
 ScyllaDB 是 Cassandra 寬直欄分散式資料庫的就地取代。ScyllaDB 以 C++ 撰寫，而不是 Cassandra 的 Java，它能夠更充份利用資源，在基準性能測試時可達到 10 倍的效能。除了維持與 Cassandra 工具及資料檔案的相容性以外，ScyllaDB 也新增了自行調整的功能。{{site.data.keyword.composeForScyllaDB_full}} 延伸了 ScyllaDB 的功能，因為它能替您管理、提供容易、自動擴充的部署系統，此系統能提供高可用性與備援，也能提供自動化備份。
 {:shortdesc}
 
-**附註：**{{site.data.keyword.composeForScyllaDB_full}} 不會提供 Compose 使用者介面的存取權。如需詳細資料，請參閱 [Compose on {{site.data.keyword.cloud}} Support](https://help.compose.com/docs/bluemix-compose-support)。
+## 建立 {{site.data.keyword.composeForScyllaDB}} 服務實例
 
-## 建立 Compose for ScyllaDB 服務實例
+您可以從 {{site.data.keyword.cloud_notm}} 型錄中的 [{{site.data.keyword.composeForScyllaDB}} 頁面](https://console.{DomainName}/catalog/services/compose-for-scylladb/)建立 {{site.data.keyword.composeForScyllaDB}} 服務。
 
-[建立 {{site.data.keyword.composeForScyllaDB}} 實例](https://console.ng.bluemix.net/catalog/services/compose-for-scylladb/)。
-
-當您建立服務的實例時，請選擇服務名稱及認證名稱。請維持服務不連結；稍後使用佈建服務時所提供的認證，即可將應用程式連接至服務。「可用的認證」小節中會列出各種認證值。
+選擇服務名稱、地區、組織，以及要在其中佈建服務的空間。您可以使用**選取資料庫版本**欄位，從可用的資料庫版本中進行選擇。
 
 當您佈建 {{site.data.keyword.composeForScyllaDB}} 實例時，可以選擇*標準* 或*企業* 方案。使用*企業* 方案，您可以將 {{site.data.keyword.composeForScyllaDB}} 實例佈建到可用的 {{site.data.keyword.composeEnterprise}} 叢集。{{site.data.keyword.composeEnterprise}} 提供企業相符性所需的安全和隔離，並使用專用網路來確保已部署之資料庫的效能。如需詳細資料，請參閱 [Compose Enterprise 文件](../ComposeEnterprise/index.html)。
 
-## 管理 Compose for ScyllaDB
+## 管理 {{site.data.keyword.composeForScyllaDB}}
 
 您可以從服務儀表板來管理服務。在這裡，您可以找到 {{site.data.keyword.cloud_notm}} Compose 資料庫的相關資訊，以及連接方式。您也可以：
 
@@ -37,14 +35,14 @@ ScyllaDB 是 Cassandra 寬直欄分散式資料庫的就地取代。ScyllaDB 以
 
 如需相關資訊，請參閱[設定](./dashboard-settings.html)。
 
-## 連接至 Compose for ScyllaDB
+## 連接至 {{site.data.keyword.composeForScyllaDB}}
 
 您可以使用與服務一起建立的認證，或使用服務儀表板的*概觀* 標籤中所提供的連線字串及指令行，來連接至服務。
 
-## 將 {{site.data.keyword.cloud_notm}} 應用程式連接至 Compose for ScyllaDB
+## 將 {{site.data.keyword.cloud_notm}} 應用程式連接至 {{site.data.keyword.composeForScyllaDB}}
 
 若要將 {{site.data.keyword.cloud_notm}} 應用程式連接至服務，請使用與服務一起建立的認證。您可以在[連接 {{site.data.keyword.cloud_notm}} 應用程式](./connecting-bluemix-app.html)中，找到如何將 {{site.data.keyword.cloud_notm}} 應用程式連接至 {{site.data.keyword.composeForScyllaDB}} 服務的資訊。
 
-## 從 {{site.data.keyword.cloud_notm}} 之外連接至 Compose for ScyllaDB
+## 從 {{site.data.keyword.cloud_notm}}
 
-如果您想要從 {{site.data.keyword.cloud_notm}} 之外連接至 {{site.data.keyword.composeForScyllaDB}}，則可以使用所提供的連線字串或指令行。您可以在[連接外部應用程式](./connecting-external.html)中，找到如何連接的相關資訊。
+ 之外連接至 {{site.data.keyword.composeForScyllaDB}}如果您想要從 {{site.data.keyword.cloud_notm}} 之外連接至 {{site.data.keyword.composeForScyllaDB}}，則可以使用所提供的連線字串或指令行。您可以在[連接外部應用程式](./connecting-external.html)中，找到如何連接的相關資訊。

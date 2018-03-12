@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  Years: 2017
-lastupdated: "2017-10-23"
+  years: 2017,2018
+lastupdated: "2017-12-11"
 ---
 
 {:new_window: target="_blank"}
@@ -33,16 +33,14 @@ Si el servicio necesita más almacenamiento, o si desea reducir la cantidad de a
     ![El panel Escalar recursos](./images/scylla-scale-show.png "El panel Escalar recursos")
 
 3. Ajuste el graduador para aumentar o reducir el almacenamiento asignado al servicio {{site.data.keyword.composeForScyllaDB}}. Mueva el graduador a la izquierda para reducir la cantidad de almacenamiento o muévalo a la derecha para aumentar el almacenamiento.
-4. Pulse **Despliegue de escalado** para activar el escalado y volver a la visión general del panel de control. Aparece un mensaje 'escalado iniciado' en la parte superior de la página que le indica que el proceso de escalado está en curso.
+4. Pulse **Despliegue de escalado** para activar el escalado y volver a la visión general del panel de control. 
 
-    ![Mensaje de escalado](./images/jobs-scaling.png "Un mensaje de escalado iniciado que indica que el escalado está en curso.")
-
-    Una vez finalizado el escalado, el panel _Detalles de despliegue_ se actualiza para mostrar el uso actual y el nuevo valor del almacenamiento disponible.
+Una vez finalizado el escalado, el panel _Detalles de despliegue_ se actualiza para mostrar el uso actual y el nuevo valor del almacenamiento disponible.
 
 
 ## Utilización de listas blancas
 
-Si desea restringir el acceso a las bases de datos, puede crear una lista blanca de direcciones IP o rangos de direcciones IP específicos en el servicio. Cuando no hay direcciones IP en la lista blanca, esta se inhabilita y el despliegue aceptará conexiones procedentes de cualquier sistema de internet.
+Si desea restringir el acceso a las bases de datos, puede crear una lista blanca de direcciones IP o rangos de direcciones IP específicos en el servicio. Cuando no hay direcciones IP en la lista blanca, esta se inhabilita y el despliegue aceptará conexiones procedentes de cualquier sistema de Internet.
 
 ![Lista blanca de IP](./images/scylla-whitelist-show.png "Los campos de lista blanca.")
 
@@ -63,3 +61,11 @@ Las entradas de la lista blanca se añaden automáticamente a los servidores de 
 ### Eliminación
 Para eliminar una dirección IP o una máscara de red de la lista blanca, pulse *Eliminar* junto a la entrada.
 Si se eliminan todas las entradas de la lista blanca, la lista blanca se inhabilita y los portales de acceso TCP aceptarán todas las direcciones IP.
+
+
+## Claves SSH
+Los servicios de Scylla se suministran con un portal SSH para habilitar la administración de nodetool del servicio. Añada la clave pública y un nombre para acceder al portal de SSH.
+
+![Claves SSH](./images/scylla-portal-ssh-show.png "Los campos Clave SSH.")
+
+La información sobre cómo funciona nodetool con el servicio scylla se encuentra en [Utilización de Nodetool](./scylla-nodetool.html).

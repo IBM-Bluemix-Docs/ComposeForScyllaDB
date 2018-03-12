@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016,2017
+  years: 2016,2018
 lastupdated: "2017-06-16"
 ---
 
@@ -13,11 +13,12 @@ lastupdated: "2017-06-16"
 
 # Connexion d'une application {{site.data.keyword.cloud_notm}}
 
-Pour connecter une application {{site.data.keyword.cloud}} à votre service, utilisez les données d'identification créées lors de la mise à disposition du service. Le modèle d'application montre comment utiliser Node.js pour établir une connexion à un service {{site.data.keyword.composeForPostgreSQL_full}} à l'aide des données d'identification fournies et comment créer une base de données, lire dans cette base de données et y écrire.
+Pour connecter une application {{site.data.keyword.cloud}} à votre service, utilisez les données d'identification créées lors de la mise à disposition du service. Le modèle d'application montre comment utiliser
+Node.js pour établir une connexion à un service {{site.data.keyword.composeForScyllaDB_full}} à l'aide des données d'identification fournies et comment créer une base de données, lire dans cette base de données et y écrire.
 
 ## Connexion à l'aide du modèle d'application 'Hello World'
 
-Le modèle d'application [compose-scylladb-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-scylladb-helloworld-nodejs) montre comment utiliser Node.js pour établir une connexion à un service {{site.data.keyword.composeForScyllaDB}} à l'aide des données d'identification fournies. L'application crée une base de données, y lit et y écrit.
+Le modèle d'application [compose-scylladb-helloworld-nodejs](https://github.com/IBM-Cloud/compose-scylladb-helloworld-nodejs) montre comment utiliser Node.js pour établir une connexion à un service {{site.data.keyword.composeForScyllaDB}} à l'aide des données d'identification fournies. L'application crée une base de données, y lit et y écrit.
 
 Téléchargez le modèle d'application et suivez les instructions contenues dans le fichier Readme. Ensuite, sur la page des détails d'application d'{{site.data.keyword.cloud_notm}}, cliquez sur **Afficher l'application** pour afficher le contenu du tableau *Exemples*.
 

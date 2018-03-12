@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  Years: 2017
-lastupdated: "2017-10-23"
+  years: 2017,2018
+lastupdated: "2017-12-11"
 ---
 
 {:new_window: target="_blank"}
@@ -33,11 +33,9 @@ Se o seu serviço precisa de armazenamento adicional, ou você deseja reduzir a 
     ![The Scale Resources page](./images/scylla-scale-show.png "The Scale Resources page")
 
 3. Ajuste a régua de controle para levantar ou abaixar o armazenamento alocado para o serviço {{site.data.keyword.composeForScyllaDB}}. Mova a régua de controle para a esquerda para reduzir a quantia de armazenamento ou mova-a para a direita para aumentar o armazenamento.
-4. Clique em **Escalar implementação** para acionar o novo ajuste de escala e retorne para a visão geral do painel. Uma mensagem 'Ajuste de escala iniciado' aparece na parte superior da página para permitir que você saiba que o novo ajuste de escala está em andamento.
+4. Clique em **Escalar implementação** para acionar o novo ajuste de escala e retorne para a visão geral do painel. 
 
-    ![Rescaling message](./images/jobs-scaling.png "A scaling initiated message indicating that the rescaling is in progress.")
-
-    Quando o ajuste de escala for concluído, a área de janela _Detalhes da implementação_ será atualizada para mostrar o uso atual e o novo valor para o armazenamento disponível.
+Quando o ajuste de escala for concluído, a área de janela _Detalhes da implementação_ será atualizada para mostrar o uso atual e o novo valor para o armazenamento disponível.
 
 
 ## Usando listas de desbloqueio
@@ -63,3 +61,11 @@ As entradas da lista de desbloqueio são incluídas automaticamente nos servidor
 ### Remoção
 Para remover um endereço IP ou máscara de rede da Lista de desbloqueio, clique na entrada *Remover* exibida próxima ele.
 Quando todas as entradas na lista de desbloqueio forem removidas, a lista de desbloqueio será desativada e todos os endereços IP serão aceitos pelos portais de acesso TCP.
+
+
+## Chaves SSH
+Os serviços Scylla são provisionados com um portal SSH para ativar a administração de nodetool do serviço. Inclua a chave pública e um nome para obter acesso ao portal SSH.
+
+![Chaves SSH](./images/scylla-portal-ssh-show.png "Os campos Chave SSH.")
+
+Informações sobre como o nodetool funciona com o serviço scylla está em [Usando o nodetool](./scylla-nodetool.html).

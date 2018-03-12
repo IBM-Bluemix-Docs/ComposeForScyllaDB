@@ -6,6 +6,8 @@ Compose For ScyllaDB
 
 	{: .navgroup id="learn"}
 	index.md
+	getting_started.md
+	pricing.md
 
 	{: .topicgroup}
 	服务仪表板
@@ -15,6 +17,8 @@ Compose For ScyllaDB
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
+	scylla-nodetool.md
+
 	{: .topicgroup}
 	连接到 Compose for Scylla
 		connecting-bluemix-app.md

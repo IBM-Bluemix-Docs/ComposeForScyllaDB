@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  Years: 2017
-lastupdated: "2017-10-23"
+  years: 2017,2018
+lastupdated: "2017-12-11"
 ---
 
 {:new_window: target="_blank"}
@@ -33,11 +33,9 @@ Wenn Ihr Service zusätzlichen Speicher benötigt oder Sie den Speicherplatz ver
     ![Seite 'Ressourcen skalieren'](./images/scylla-scale-show.png "Seite 'Ressourcen skalieren'")
 
 3. Passen Sie den Schieberegler an, um den Speicher zu erhöhen oder zu verringern, der dem {{site.data.keyword.composeForScyllaDB}}-Service zugeordnet ist. Verschieben Sie den Schieberegler nach links, um den Speicherplatz zu verringern, oder nach rechts, um ihn zu erhöhen.
-4. Klicken Sie auf **Bereitstellung skalieren**, um die Neuskalierung auszulösen und zur Dashboardübersicht zurückzukehren. Oben auf der Seite wird die Nachricht 'Skalierung eingeleitet' angezeigt, damit Sie wissen, dass die Neuskalierung läuft. 
+4. Klicken Sie auf **Bereitstellung skalieren**, um die Neuskalierung auszulösen und zur Dashboardübersicht zurückzukehren. 
 
-    ![Nachricht über Neuskalierung](./images/jobs-scaling.png "Nachricht 'Skalierung eingeleitet'. Gibt an, dass die Neuskalierung läuft.")
-
-    Nach dem Abschluss der Skalierung wird die Anzeige _Bereitstellungsdetails_ aktualisiert und zeigt die aktuelle Nutzung sowie den neuen Wert für den verfügbaren Speicher an.
+Nach dem Abschluss der Skalierung wird die Anzeige _Bereitstellungsdetails_ aktualisiert und zeigt die aktuelle Nutzung sowie den neuen Wert für den verfügbaren Speicher an.
 
 
 ## Whitelists verwenden
@@ -51,7 +49,6 @@ Das Feld *IP* kann eine einzelne vollständige IPv4- oder IPv6-Adresse mit oder 
 
 Beachten Sie Folgendes: Zwar lässt der IP-Eintrag IPv6 zu, doch ist derzeit keine Compose-Bereitstellung für den IPv6-Netzbetrieb verfügbar, sodass keine Filterung dieser Adressen möglich ist.
 
-
 ### Netzmasken
 Verwenden Sie eine Netzmaske, um eine Verbindung von einem angegebenen IP-Adressbereich zuzulassen. Bei Verwendung einer Netzmaske muss die IP-Adresse vollständig angegeben werden. Es muss also beispielsweise 192.168.1.0/24 statt 192.168.1/24 eingegeben werden.
 
@@ -62,4 +59,13 @@ Die *Beschreibung* kann ein beliebiger für den Benutzer hilfreicher Text zum Id
 Einträge in die Whitelist werden automatisch zu den Compose-Servern hinzugefügt, damit sie eine Verbindung herstellen können.
 
 ### Entfernen
-Klicken Sie, wenn Sie eine IP-Adresse oder Netzmaske aus der Whitelist entfernen wollen, auf den neben ihr angezeigten Eintrag *Entfernen*. Wenn alle Einträge in der Whitelist entfernt werden, wird die Whitelist inaktiviert und die TCP-Zugriffsportale akzeptieren alle IP-Adressen.
+Klicken Sie, wenn Sie eine IP-Adresse oder Netzmaske aus der Whitelist entfernen wollen, auf den neben ihr angezeigten Eintrag *Entfernen*.
+Wenn alle Einträge in der Whitelist entfernt werden, wird die Whitelist inaktiviert und die TCP-Zugriffsportale akzeptieren alle IP-Adressen.
+
+
+## SSH-Schlüssel
+Scylla-Services werden mit einem SSH-Portal bereitgestellt, um die Verwaltung mit 'nodetool' zu ermöglichen. Fügen Sie den öffentlichen Schlüssel und einen Namen hinzu, um Zugang zum SSH-Portal zu erhalten.
+
+![SSH-Schlüssel](./images/scylla-portal-ssh-show.png "Die SSH-Schlüsselfelder.")
+
+Informationen zur Funktionsweise von 'nodetool' mit Ihrem Scylla-Service finden Sie in [Nodetool verwenden](./scylla-nodetool.html).
