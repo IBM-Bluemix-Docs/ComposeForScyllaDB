@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2017-06-16"
+lastupdated: "2018-02-28"
 ---
 
 {:new_window: target="_blank"}
@@ -15,51 +15,6 @@ lastupdated: "2017-06-16"
 {: #connecting-external-app}
 
 You can find the information you need to connect to {{site.data.keyword.composeForScyllaDB_full}} on the *Overview* page of your {{site.data.keyword.composeForPostgreSQL_full}} service.
-
-You can connect directly to {{site.data.keyword.composeForScyllaDB}} using `cqlsh`. How you get this tool onto your local device depends on your local platform. The easiest is to install the latest Cassandra release using an appropriate method for your platform (the latest versions still support version 2.1.8 which is what Scylla is) and use the builtin `cqlsh` command.
-
-On a Mac, for example:
-
-1. Install Cassandra with `homebrew` by typing `brew install cassandra`.
-2. Copy any of the commands from the Overview page:
-
-  ![Example `cqlsh` connection string.](./cqlsh_connection_string "Example cqlsh connection string")
-
-3. Paste the command into your shell to execute it:
-
-  ![The `cqlsh` shell.](./cqlsh_shell.png "The cqlsh shell")
-
-4. If you type `HELP` you can see that the shell has a lot of capability. What's even nicer is that all of those commands have `TAB` completion too.
-5. Type `CREATE KEYSPACE my_new_keyspace <TAB><TAB><TAB>`. You should see the choices for the replication class.
-6. You can choose `SimpleStrategy` here because the cluster won't be spanning multiple data centers.
-7. Press `<TAB><TAB>` again and enter in 3 for the replication_factor. Then close the brace with `}` and finish the statement with `;<enter>`.
-
-  You just created your first KEYSPACE and defaulted it to replicating your data to all three nodes in your cluster.
-
-8. Now you can use the keyspace:
-
-  ```sql
-  USE my_new_keyspace;
-  ```
-
-  Your shell now shows that your command prompt is using your keyspace by default:
-
-  ![Running `CREATE KEYSPACE` and `USE`.](./images/running_create_keyspace_use.png "Running `CREATE KEYSPACE` and `USE`")
-
-  Every table has to have a keyspace. When you create one in the shell here it will default to `my_new_keyspace`.
-
-  While Scylla/Cassandra has evolved into having a schema language that looks very similar to SQL. It's not really the case. Unlike an RDBMS, a row here is much more like a key value lookup. It just so happens that the value has a flexible schema which we are about to define:
-
-9. Type the following `CREATE TABLE` command in the shell to create a place to populate with  examples.
-
-  ```sql
-  CREATE TABLE my_new_table (
-    my_table_id uuid,
-    last_name text,
-    first_name text,
-    PRIMARY KEY(my_table_id)
-  );
-  ```
 
 ## Connecting from the JVM
 
@@ -117,27 +72,40 @@ To prove that the script works go back to your `cqlsh` and query the table:
 
 ## Connecting from Python
 
-Support for languages other than Java is very solid too. Python is a great example. `cqlsh` is even written in Python. So make no mistake the support here is more than up to date:
+To connect your python application, use the [DataStax Python Driver](https://github.com/datastax/python-driver). Installation can be done through pip:
 
 ```shell
 pip install cassandra-driver
 ```
 
-This pulls in the driver with a python package manager `pip`. The following performs very similarly to the Java code of preparing a statement and executing an insert:
+This pulls in the driver with a python package manager `pip`. The driver expects a cetificate to use when TLS/SSL is enabled, and instructions for using a certificate with your service are on the [Using LE Certificates](./scylla-certificates.html) page. All the other information the driver needs is in the _Connection Strings_ of the service _Overview_.
+
+The following performs very similarly to the Java code of preparing a statement and executing an insert:
 
 ```python
+import ssl
+import uuid
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
-import uuid
+
+ssl_options = {
+    "ca_certs":"/path_to_cert/lecert.pem",
+    "ssl_version":ssl.PROTOCOL_TLSv1_2
+}
 
 auth_provider = PlainTextAuthProvider(
                   username='scylla',
-                  password='XOEDTTBPZGYAZIQD')
+                  password='your_password')
 
 cluster = Cluster(
-            contact_points = ["aws-us-east-1-portal9.dblayer.com"],
+            contact_points = [
+                "portal-59b813def16d6e0014003b45224-8.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com",  
+                "portal-59b813def16d6e0014003b47186-6.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com",  
+                "portal-59b813def16d6e0014003b49208-7.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com"
+                ],
             port = 15401,
-            auth_provider = auth_provider)
+            auth_provider = auth_provider,
+            ssl_options=ssl_options)
 
 session = cluster.connect('my_new_keyspace')
 

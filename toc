@@ -18,6 +18,8 @@ Compose For ScyllaDB
 
 	{: .navgroup id="howto"}
 	scylla-nodetool.md
+	scylla-cqlsh.md
+	scylla-certificates.md
 
 	{: .topicgroup}
 	Connecting to Compose for Scylla
