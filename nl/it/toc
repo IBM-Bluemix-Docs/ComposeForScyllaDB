@@ -1,0 +1,26 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="Compose For ScyllaDB" audience="service" href="/docs/services/ComposeForScyllaDB/getting_started.html"}
+Compose For ScyllaDB
+
+	{: .navgroup id="learn"}
+	getting_started.md
+	index.md
+	pricing.md
+
+	{: .topicgroup}
+	Il dashboard del servizio
+		dashboard-overview.md
+		dashboard-backups.md
+		dashboard-settings.md
+	{: .navgroup-end}
+
+	{: .navgroup id="howto"}
+	scylla-nodetool.md
+
+	{: .topicgroup}
+	Connessione a Compose for Scylla
+		connecting-bluemix-app.md
+		connecting-external.md
+	{: .navgroup-end}
