@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016,2018
-lastupdated: "2017-06-16"
+lastupdated: "2018-05-09"
 ---
 
 {:new_window: target="_blank"}
@@ -25,14 +25,16 @@ Download the sample app and follow the instructions in the readme file. Then, in
 Field Name|Description
 ----------|-----------
 `db_type`|The type of database that is offered by the service, in this case `scylla`.
-`uri_cli_1`|An alternative `cqlsh` shell command line that connects to the database instance.
+`uri_cli_1`|An secondary `cqlsh` shell command line that connects to the database instance.
 `maps`|A ScyllaDB connection map that provides the information that is needed by various drivers to associate internal IP addresses with the external DNS names of a ScyllaDB database.
 `name`|The database deployment name.
 `uri_cli`|A `cqlsh` shell command line that connects to the database instance.
-`uri_direct_2`|An alternative URI that can be used to connect to the service. Formatted as for `uri`.
-`uri_direct_1`|An alternative URI that can be used to connect to the service. Formatted as for `uri`.
-`ca_certificate_base64`|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. The certificate is base64 encoded.
+`uri_direct_2`|A third URI that can be used to connect to the service. The format is the same as `uri`.
+`uri_direct_1`|A secondary URI that can be used to connect to the service. The format is the same as `uri`.
+`ca_certificate_base64` `(optional)`|A base64 encoded, self-signed certificate that is used to confirm that an application is connecting to the appropriate server. The certificate is only present on services that have a self-signed instead of a Let's Encrypt certificate. You need to decode the key before you can use it, as shown in the sample application.
 `deployment_id`|An internal identifier for the service as created within Compose.
-`uri_cli_2`|An alternative `cqlsh` shell command line that connects to the database instance.
+`uri_cli_2`|An third `cqlsh` shell command line that connects to the database instance.
 `uri`|The URI that is used when connecting to the service, which includes the schema (`scylla:`), password, host name of server, port number to connect to, and database name.
 {: caption="Table 1. Compose for ScyllaDB credentials" caption-side="top"}
+
+**Note:** Three `haproxy` portals provide access to the Scylla service. Both `uri`, `uri_direct_1`, and `uri_direct_2` can be used to connect. In your applications, switch between `uri`, `uri_direct_1`, and `uri_direct_2` to manage responses to connection failures.
