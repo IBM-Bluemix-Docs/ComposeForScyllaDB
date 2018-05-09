@@ -47,7 +47,7 @@ A URI-formatted connection string that can be used by some client libraries and 
 
 ### Command Line
 
-The **Command Line** is a preformatted command which will invoke `cqlsh` with the correct parameters. The displayed command include required flags (`--ssl` and `--cqlversion`).  To use it, you'll need to have the PostgreSQL client tools installed on the local system. You can find out more about how to do this in [Connecting an external application](./connecting-external.html).
+The **Command Line** is a preformatted command which invokes `cqlsh` with the correct parameters. The displayed command includes the required flags (`--ssl` and `--cqlversion`).  To use it, you need to install the PostgreSQL client tools on the local system. You can find out more about how to do this in [Connecting an external application](./connecting-external.html).
 
 ### Maps
 These address translation maps can be used in applications that require high-availability and can use auto-discovery to find nodes in the cluster. They translate the external portal addresses to the internal cluster addresses for client drivers that use this feature.

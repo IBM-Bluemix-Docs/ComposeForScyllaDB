@@ -78,7 +78,7 @@ SSL_VERSION=TLSv1_2 SSL_VALIDATE=false cqlsh --ssl portal1204-7.sally-scylla.com
 
 ## Obtaining and Using the Certificate
 
-If you want to use cqlsh and verify the remote host you will need to obtain the certificate, save it somewhere accessible, and then provide the path to the certificate to cqlsh. A copy of the certificate lives in the [Scylla and certificates](doc:scylla-and-certificates) page, as well as details about its contents and their source. Make a certificate file or save a copy locally. 
+If you want to use cqlsh and verify the remote host you will need to obtain the certificate, save it somewhere accessible, and then provide the path to the certificate to cqlsh.
 
 Set the environment variable  `SSL_CERTFILE` to the path and filename of your saved certificate to enable it for all subsequent invocations of `cqlsh`. 
 
@@ -95,9 +95,10 @@ If you only want to use a particular certificate for a single `cqlsh` command pl
 SSL_VERSION=TLSv1_2 SSL_CERTFILE='~/path_to_your/lechain.pem' cqlsh --ssl portal1204-7.sally-scylla.composedb.com 24981 -u scylla -p [password] --cqlversion=3.3.1
 ```
 
-## Using cqlsh
+## Getting started with cqlsh
 
 If you type `HELP` you can see that the shell has a lot of capability. What's even nicer is that all of those commands have `TAB` completion too. For example:
+
 1. Type `CREATE KEYSPACE my_new_keyspace <TAB><TAB><TAB>`. You should see the choices for the replication class.
 2. You can choose `SimpleStrategy` here because the cluster won't be spanning multiple data centers.
 3. Press `<TAB><TAB>` again and enter in 3 for the replication_factor. Then close the brace with `}` and finish the statement with `;<enter>`.

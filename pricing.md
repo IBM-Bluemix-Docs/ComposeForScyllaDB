@@ -15,20 +15,21 @@ lastupdated: "2018-01-03"
 {: #pricing}
 
 ## Base Configuration
+
 An {{site.data.keyword.composeForScyllaDB_full}} service starts with 3 member nodes, each with 5GB storage and 512MB of memory, which is equal to 5 units of resources. The service _includes_ replication and high-availability, so each unit and the price per unit _includes_ the cost of the resources across all three nodes.
 
 The base configuration also includes 3 HAProxy portals that provide connections to the cluster. Each HAProxy portal has 64MB and supports authentication, HTTPS, and IP whitelisting.
 
-### Cost
 The base service configuration has a set price. Please consult the catalog tiles on {{site.data.keyword.cloud_notm}} for base pricing in your local currency. For example, the base price in US dollars is $90/month.
 
-## Expansion Options
+## Increaasing resources
 If you need additional storage or memory for your service, you can increase the resources allocated in a 10:1 ratio of disk storage to memory unit. Increasing the disk allocated to the deployment will also increase the RAM allocated. A {{site.data.keyword.composeForScyllaDB}} unit consists of 1GB of storage and 102MB of memory, and each unit and the price per unit _includes_ the cost to increase the resources on all three of the cluster's nodes.
 
-### Cost
+## Calculating the cost of your deployment
+{: #tiered-pricing}
+
 Each additional unit (1GB storage/102MB memory) has a per unit price, which is listed in your local currency on the {{site.data.keyword.cloud_notm}} catalog tile for the service. In US dollars each additional unit costs $18. As the _total_ size of all your {{site.data.keyword.composeForScyllaDB}} services increases, the per unit price decreases, as shown in the tiered pricing table, below.
 
-### Tiered Pricing
 Number of Units|Price per Unit
 ----------|-----------
 5 - 9 units|base price per unit -- $18.00 USD/Unit
