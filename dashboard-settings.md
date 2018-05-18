@@ -5,17 +5,9 @@ Copyright:
 lastupdated: "2017-12-11"
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-
 # Settings
 
-These features allow you to adapt your {{site.data.keyword.composeForScyllaDB_full}} service to better suit your needs and requirements.
-
+Use the {{site.data.keyword.composeForScyllaDB_full}} to adapt your service to better suit your needs and requirements.
 
 ## Upgrade Version
 
