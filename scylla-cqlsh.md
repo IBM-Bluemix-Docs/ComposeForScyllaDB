@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-17"
+lastupdated: "2018-05-18"
 ---
 
 {:new_window: target="_blank"}
@@ -51,6 +51,7 @@ port = [portnumber]
 factory = cqlshlib.ssl.ssl_transport_factory
 
 [ssl]
+version=SSLv23
 certfile = ~/path_to_your/lechain.pem
 validate = true
 ```
@@ -59,16 +60,15 @@ Enter the information provided in your service's _Connection Strings_ and save t
 
 You can now log in to your Scylla database by running `cqlsh --ssl --cqlshrc=example.cqlshrc` from the command line. Note that even though `cqlshrc` has an option for specifying `ssl=true` it appears to be ignored so you must use the `--ssl` flag.
 
-The ssl version cannot be set in the `cqlshrc` file, so you have to either set the environment to use TLSv1.2  or append `SSL_VERSION=TLSv1_2` to the front of the `cqlsh` connection command.
-
 ## TLSv1.2
 
-`cqlsh` does not default to TLSv1.2 when negotiating an encrypted connection. To successfully connect to a Compose Scylla deployment, the TLS version must be specified in the environment that is running `cqlsh`. Set SSL_VERSION in the environment using:
-`export SSL_VERSION=TLSv1_2` or place `SSL_VERSION=TLSv1_2` before the `cqlsh` connection command.
+`cqlsh` does not default to TLSv1.2 when negotiating an encrypted connection. To successfully connect to a Compose Scylla deployment, the TLS version must be specified in the environment running `cqlsh`. To get the most compatibility (and a bit of future-proofing for TLSv1.3), set `SSL_VERSION` in the environment to SSLv23 by using `export SSL_VERSION=SSLv23` or by placing `SSL_VERSION=SSLv23` before the `cqlsh` connection command.
+
+You can also set the version specifically to TLSv1.2 by using `export SSL_VERSION=TLSv1_2` or by placing `SSL_VERSION=TLSv1_2` before the `cqlsh` connection command.
 
 ## Connecting Without Validating
 
-Validation is enabled by default, but you can connect to Scylla with TLS/SSL without validating the remote host. This is not recommended for production systems. Validation is controlled by the environment variable `SSL_VALIDATE`, or by SSL settings in the cqlshrc file. Set `SSL_VALIDATE` to false (`export SSL_VALIDATE=false`) in your environment to disable validation.
+Validation is enabled by default, but you can connect to Scylla with TLS/SSL without validating the remote host. This is not recommended for production systems, however. Validation is controlled by the environment variable `SSL_VALIDATE`, or by SSL settings in the cqlshrc file. Set `SSL_VALIDATE` to false (`export SSL_VALIDATE=false`) in your environment to disable validation.
 
 Alternatively, you can edit your cqlshrc file to disable validation.
 
@@ -82,7 +82,7 @@ If you want to disable validation for a single `cqlsh` command, include `SSL_VAL
 You still have to tell `cqlsh` to use TLSv1.2, even when validation is not enabled. If you haven't set the ssl version in the environment and don't want to validate, the connection should look like this example:
 
 ```
-SSL_VERSION=TLSv1_2 SSL_VALIDATE=false cqlsh --ssl portal1204-7.sally-scylla.composedb.com 24981 -u scylla -p [password] --cqlversion=3.3.1
+SSL_VERSION=SSLv23 SSL_VALIDATE=false cqlsh --ssl portal1204-7.sally-scylla.composedb.com 24981 -u scylla -p [password] --cqlversion=3.3.1
 ```
 
 ## Obtaining and Using the Certificate
@@ -102,7 +102,7 @@ validate = true
 If you only want to use a particular certificate for a single `cqlsh` command place `SSL_CERTFILE = ~/path_to_your/lechain.pem` at the start of your cqlsh connection command. For example:
 
 ```
-SSL_VERSION=TLSv1_2 SSL_CERTFILE='~/path_to_your/lechain.pem' cqlsh --ssl portal1204-7.sally-scylla.composedb.com 24981 -u scylla -p [password] --cqlversion=3.3.1
+SSL_VERSION=SSLv23 SSL_CERTFILE='~/path_to_your/lechain.pem' cqlsh --ssl portal1204-7.sally-scylla.composedb.com 24981 -u scylla -p [password] --cqlversion=3.3.1
 ```
 
 ## Getting started with cqlsh
