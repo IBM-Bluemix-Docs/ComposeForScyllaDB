@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="Compose For ScyllaDB" audience="service" href="/docs/services/ComposeForScyllaDB/index.html"}
+{: .toc subcollection="compose-for-scylladb" audience="service" href="/docs/services/ComposeForScyllaDB/index.html"}
 Compose For ScyllaDB
 
 	{: .navgroup id="learn"}
@@ -10,7 +10,7 @@ Compose For ScyllaDB
 	pricing.md
 
 	{: .topicgroup}
-	El panel del control del servicio
+	El panel de control del servicio
 		dashboard-overview.md
 		dashboard-backups.md
 		dashboard-settings.md
@@ -18,6 +18,8 @@ Compose For ScyllaDB
 
 	{: .navgroup id="howto"}
 	scylla-nodetool.md
+	scylla-cqlsh.md
+	scylla-certificates.md
 
 	{: .topicgroup}
 	Conexión a Compose for Scylla

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2017-06-16"
+lastupdated: "2018-02-28"
 ---
 
 {:new_window: target="_blank"}
@@ -15,51 +15,6 @@ lastupdated: "2017-06-16"
 {: #connecting-external-app}
 
 Sie finden die Informationen, die Sie zum Herstellen einer Verbindung zu {{site.data.keyword.composeForScyllaDB_full}} benötigen, auf der Seite *Übersicht* Ihres {{site.data.keyword.composeForPostgreSQL_full}}-Service.
-
-Sie können mit `cqlsh` eine Direktverbindung zu {{site.data.keyword.composeForScyllaDB}} herstellen. Wie Sie dieses Tool auf Ihre lokale Einheit abrufen, hängt von Ihrer lokalen Plattform ab. Am einfachsten ist es, das neueste Cassandra-Release mit einer für Ihre Plattform geeigneten Methode zu installieren (die neuesten Versionen unterstützen weiterhin Version 2.1.8, also Scylla) und den integrierten Befehl `cqlsh` zu verwenden.
-
-Gehen Sie auf einem Mac beispielsweise wie folgt vor:
-
-1. Installieren Sie Cassandra mit `homebrew`, indem Sie `brew install cassandra` eingeben.
-2. Kopieren Sie einen der Befehle von der Übersichtsseite:
-
-  ![Beispiel 'cqlsh' für Verbindungszeichenfolge.](./cqlsh_connection_string "Beispielverbindungszeichenfolge 'cqlsh'")
-
-3. Fügen Sie den Befehl in Ihre Shell ein, um ihn auszuführen:
-
-  ![Shell 'cqlsh'.](./cqlsh_shell.png "cqlsh-Shell")
-
-4. Wenn Sie `HELP` eingeben, sehen Sie, dass die Shell eine umfangreiche Funktionalität aufweist. Noch praktischer ist es, dass alle diese Befehle auch eine Fertigstellung namens `TAB` besitzen.
-5. Geben Sie `CREATE KEYSPACE my_new_keyspace <TAB><TAB><TAB>` ein. Nun sollten Sie die Auswahlmöglichkeiten für die Replikationsklasse sehen.
-6. Sie können hier `SimpleStrategy` auswählen, weil sich der Cluster nicht über mehrere Rechenzentren erstreckt.
-7. Drücken Sie noch einmal `<TAB><TAB>` und geben Sie '3' für 'replication_factor' ein. Schließen Sie dann die geschweifte Klammer mit `}` und schließen Sie die Anweisung mit `;<enter>` ab.
-
-  Sie haben gerade Ihren ersten Schlüsselbereich (KEYSPACE) erstellt und so eingestellt, dass Ihre Daten standardmäßig auf alle drei Knoten in Ihrem Cluster repliziert werden.
-
-8. Nun können Sie den Schlüsselbereich verwenden:
-
-  ```sql
-  USE my_new_keyspace;
-  ```
-
-  Nun zeigt Ihre Shell an, dass Ihre Eingabeaufforderung Ihren Schlüsselbereich standardmäßig verwendet:
-
-  ![Running `CREATE KEYSPACE` and `USE`.](./images/running_create_keyspace_use.png "Running `CREATE KEYSPACE` and `USE`")
-
-  Jede Tabelle muss einen Schlüsselbereich haben. Wenn Sie hier einen Schlüsselbereich in der Shell erstellen, hat er standardmäßig den Namen `my_new_keyspace`.
-
-  Zwar hat sich Scylla/Cassandra so weiterentwickelt, dass es eine Schemasprache besitzt, die SQL sehr ähnlich sieht, doch ist das in Wirklichkeit nicht so. Im Gegensatz zu RDBMS ähnelt eine Zeile hier viel eher eine Schlüsselwertsuche. Es ergibt sich einfach, dass der Wert ein flexibles Schema hat, das Sie gerade definieren wollen:
-
-9. Geben Sie in der Shell den folgenden Befehl `CREATE TABLE` ein, um einen Bereich zu erstellen, der mit Beispielen gefüllt werden kann.
-
-  ```sql
-  CREATE TABLE my_new_table (
-    my_table_id uuid,
-    last_name text,
-    first_name text,
-    PRIMARY KEY(my_table_id)
-  );
-  ```
 
 ## Verbindung über die JVM herstellen
 
@@ -117,27 +72,40 @@ Kehren Sie zu Ihrem Befehl `cqlsh` zurück, um zu beweisen, dass das Script funk
 
 ## Verbindung über Python herstellen
 
-Auch für andere Sprachen als Java wird eine solide Unterstützung angeboten. Python ist ein gutes Beispiel. `cqlsh` wird sogar in Python geschrieben. Täuschen Sie sich nicht: Die Unterstützung hier ist ganz auf der Höhe:
+Verwenden Sie den [DataStax Python-Treiber](https://github.com/datastax/python-driver), um eine Verbindung zu Ihrer Python-Anwendung herzustellen. Die Installation kann über pip erfolgen: 
 
 ```shell
 pip install cassandra-driver
 ```
 
-Dadurch wird der Treiber mit einem Python-Paketmanager namens `pip` integriert. Der folgende Code funktioniert ähnlich wie der Java-Code zum Vorbereiten einer Anweisung und zum Ausführen einer Einfügung:
+Dadurch wird der Treiber mit einem Python-Paketmanager namens `pip` integriert. Der Treiber erwartet die Verwendung eines Zertifikats, wenn TLS/SSL aktiviert ist. Anweisungen zur Verwendung eines Zertifikats mit Ihrem Service befinden sich auf der Seite [LE-Zertifikate verwenden](./scylla-certificates.html). Der Treiber benötigt außerdem nur noch Informationen, die sich in den _Verbindungszeichenfolgen_ der _Übersicht_ des Service befinden.
+
+Der folgende Code funktioniert ähnlich wie der Java-Code zum Vorbereiten einer Anweisung und zum Ausführen einer Einfügung:
 
 ```python
+import ssl
+import uuid
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
-import uuid
+
+ssl_options = {
+    "ca_certs":"/path_to_cert/lecert.pem",
+    "ssl_version":ssl.PROTOCOL_TLSv1_2
+}
 
 auth_provider = PlainTextAuthProvider(
                   username='scylla',
-                  password='XOEDTTBPZGYAZIQD')
+                  password='your_password')
 
 cluster = Cluster(
-            contact_points = ["aws-us-east-1-portal9.dblayer.com"],
+            contact_points = [
+                "portal-59b813def16d6e0014003b45224-8.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com",  
+                "portal-59b813def16d6e0014003b47186-6.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com",  
+                "portal-59b813def16d6e0014003b49208-7.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com"
+                ],
             port = 15401,
-            auth_provider = auth_provider)
+            auth_provider = auth_provider,
+            ssl_options=ssl_options)
 
 session = cluster.connect('my_new_keyspace')
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016,2018
-lastupdated: "2017-07-13"
+lastupdated: "2018-03-27"
 ---
 
 {:new_window: target="_blank"}
@@ -34,6 +34,9 @@ Vous pouvez gérer votre service depuis son tableau de bord. Vous y trouverez de
 - constituer des listes blanches pour limiter l'accès à vos bases de données. 
 
 Pour plus d'informations, voir [Paramètres](./dashboard-settings.html).
+
+{{site.data.keyword.composeForScyllaDB}} repose sur les rôles Cloud Foundry pour la gestion de l'accès au service. Seuls les utilisateurs dotés du rôle Développeur peuvent voir ou utiliser le tableau de bord du service. Pour plus d'informations sur les rôles Cloud Foundry, voir les pages [Accès Cloud Foundry](https://console.bluemix.net/docs/iam/cfaccess.html#cfaccess) et [Gestion de l'accès Cloud Foundry](https://console.bluemix.net/docs/iam/mngcf.html#mngcf).
+{: .tip}
 
 ## Connexion à {{site.data.keyword.composeForScyllaDB}}
 

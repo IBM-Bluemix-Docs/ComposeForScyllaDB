@@ -23,7 +23,7 @@ La configurazione di base inoltre include 3 portali HAProxy che forniscono le co
 La configurazione del servizio di base a un prezzo fissato. Consulta i tile del catalogo {{site.data.keyword.cloud_notm}} per i prezzi di base nella tua valuta locale. Ad esempio, il prezzo di base in dollari US è $90/mese.
 
 ## Opzioni di espansione
-Se hai bisogno di ulteriore archiviazione o memoria per il tuo servizio, puoi aumentare le risorse assegnate in un rapporto 10:1 di archiviazione del disco per unità di memoria. L'aumento del disco assegnato alla distribuzione aumenterà anche la RAM assegnata. Un'unità {{site.data.keyword.composeForScyllaDB}} è composta da 1GB di archiviazione e 102MB di memoria e ogni unità e prezzo per unità _include_ il costo di incremento delle risorse su tutti e tre i nodi del cluster. 
+Se hai bisogno di ulteriore archiviazione o memoria per il tuo servizio, puoi aumentare le risorse assegnate in un rapporto 10:1 di archiviazione del disco per unità di memoria. L'aumento del disco assegnato alla distribuzione aumenterà anche la RAM assegnata. Un'unità {{site.data.keyword.composeForScyllaDB}} è composta da 1GB di archiviazione e 102MB di memoria e ogni unità e prezzo per unità _include_ il costo di incremento delle risorse su tutti e tre i nodi del cluster.
 
 ### Costo
 Ogni unità aggiuntiva (1GB di archiviazione/102MB di memoria) ha un prezzo per unità, che viene elencato nella tua valuta corrente nel tile del catalogo {{site.data.keyword.cloud_notm}} per il servizio. In dollari US ogni unità aggiuntiva costa $18. Quando la dimensione _totale_ di tutti i tuoi servizi {{site.data.keyword.composeForScyllaDB}} aumenta, il prezzo per unità diminuisce, come mostrato nella seguente tabella dei prezzi a livelli.

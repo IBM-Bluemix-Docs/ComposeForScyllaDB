@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2017-06-16"
+lastupdated: "2018-02-28"
 ---
 
 {:new_window: target="_blank"}
@@ -15,51 +15,6 @@ lastupdated: "2017-06-16"
 {: #connecting-external-app}
 
 您可以在 {{site.data.keyword.composeForPostgreSQL_full}} 服务的*概述*页面中找到连接到 {{site.data.keyword.composeForScyllaDB_full}} 所需的信息。
-
-您可以使用 `cqlsh` 直接连接到 {{site.data.keyword.composeForScyllaDB}}。如何将此工具放在本地设备上取决于您的本地平台。最简单的方法是使用适用于您平台的方法安装最新的 Cassandra 版本（最新版本仍支持 V2.1.8，即 Scylla）并使用内置 `cqlsh` 命令。
-
-例如，在 Mac 上：
-
-1. 通过输入 `brew install cassandra` 安装 Cassandra 和 `homebrew`。
-2. 从概述页面复制任何命令：
-
-  ![示例“cqlsh”连接字符串。](./cqlsh_connection_string "示例 cqlsh 连接字符串")
-
-3. 将命令粘贴到 shell 中以执行该命令：
-
-  ![“cqlsh”shell。](./cqlsh_shell.png "cqlsh shell")
-
-4. 如果输入 `HELP`，那么可以看到 shell 具有许多功能。更为喜人的是所有这些命令也都补全了 `TAB`。
-5. 输入 `CREATE KEYSPACE my_new_keyspace <TAB><TAB><TAB>`。您应该看到复制类的选项。
-6. 您可以在此处选择 `SimpleStrategy`，因为集群不会跨多个数据中心。
-7. 再次按下 `<TAB><TAB>` 并针对 replication_factor 输入 3。然后，使用 `}` 结束花括号并使用 `;<enter>` 完成语句。
-
-  您刚创建了第一个 KEYSPACE，并将其缺省设置为将数据复制到集群中的所有三个节点。
-
-8. 现在，您可以使用键空间：
-
-  ```sql
-  USE my_new_keyspace;
-  ```
-
-  现在，您的 shell 显示命令提示符缺省情况下使用您的键空间：
-
-  ![运行“CREATE KEYSPACE”和“USE”。](./images/running_create_keyspace_use.png "运行“CREATE KEYSPACE”和“USE”")
-
-  每个表都必须具有一个键空间。在此处的 shell 中创建键空间时，它将缺省为 `my_new_keyspace`。
-
-  Scylla/Cassandra 已经发展成具有类似于 SQL 的模式语言。事实并非如此。与 RDBMS 不同，此处的行更像键值查找。而恰巧值具有我们要定义的灵活模式：
-
-9. 在 shell 中输入以下 `CREATE TABLE` 命令，以创建要填充示例的地方。
-
-  ```sql
-  CREATE TABLE my_new_table (
-    my_table_id uuid,
-    last_name text,
-    first_name text,
-    PRIMARY KEY(my_table_id)
-  );
-  ```
 
 ## 通过 JVM 进行连接
 
@@ -117,27 +72,40 @@ cluster.close()
 
 ## 通过 Python 进行连接
 
-对 Java 以外的语言的支持也非常可靠。Python 就是一个很好的例子。`cqlsh` 甚至是以 Python 编写的。因此，毫无疑问，此处的支持是最新的：
+要连接 Python 应用程序，请使用 [DataStax Python Driver](https://github.com/datastax/python-driver)。可通过 pip 完成安装：
 
 ```shell
 pip install cassandra-driver
 ```
 
-这将使用 Python 软件包管理器 `pip` 拉入驱动程序。以下操作的执行与预编译语句和执行插入操作的 Java 代码非常相似：
+这将使用 Python 软件包管理器 `pip` 拉入驱动程序。驱动程序期望在启用 TLS/SSL 时使用的证书，并且将证书用于服务的指示信息位于[使用 LE 证书](./scylla-certificates.html)页面上。驱动程序所需的所有其他信息都位于服务_概述_的_连接字符串_中。
+
+以下操作的执行与预编译语句和执行插入操作的 Java 代码非常相似：
 
 ```python
+import ssl
+import uuid
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
-import uuid
+
+ssl_options = {
+    "ca_certs":"/path_to_cert/lecert.pem",
+    "ssl_version":ssl.PROTOCOL_TLSv1_2
+}
 
 auth_provider = PlainTextAuthProvider(
                   username='scylla',
-                  password='XOEDTTBPZGYAZIQD')
+                  password='your_password')
 
 cluster = Cluster(
-            contact_points = ["aws-us-east-1-portal9.dblayer.com"],
+            contact_points = [
+                "portal-59b813def16d6e0014003b45224-8.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com",  
+                "portal-59b813def16d6e0014003b47186-6.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com",  
+                "portal-59b813def16d6e0014003b49208-7.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com"
+                ],
             port = 15401,
-            auth_provider = auth_provider)
+            auth_provider = auth_provider,
+            ssl_options=ssl_options)
 
 session = cluster.connect('my_new_keyspace')
 

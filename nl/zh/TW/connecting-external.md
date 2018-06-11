@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2017-06-16"
+lastupdated: "2018-02-28"
 ---
 
 {:new_window: target="_blank"}
@@ -15,51 +15,6 @@ lastupdated: "2017-06-16"
 {: #connecting-external-app}
 
 您可以在 {{site.data.keyword.composeForPostgreSQL_full}} 服務的*概觀* 頁面上，找到連接至 {{site.data.keyword.composeForScyllaDB_full}} 所需的資訊。
-
-您可以使用 `cqlsh` 直接連接至 {{site.data.keyword.composeForScyllaDB}}。在本端裝置上取得此工具的方式，視您的本端平台而定。最簡單的是使用您的平台所適用的方法來安裝最新的 Cassandra 版本（最新版本仍支援 2.1.8 版，即所謂的 Scylla），並使用內建的 `cqlsh` 指令。
-
-例如，在 Mac 上：
-
-1. 鍵入 `brew install cassandra`，透過 `homebrew` 安裝 Cassandra。
-2. 從「概觀」頁面複製任何指令：
-
-  ![範例 `cqlsh` 連線字串。](./cqlsh_connection_string "範例 cqlsh 連線字串")
-
-3. 將指令貼至您的 Shell 以執行它：
-
-  ![`cqlsh` Shell。](./cqlsh_shell.png "cqlsh Shell")
-
-4. 如果您鍵入 `HELP`，可以看到 Shell 具有許多功能。更好的是所有這些命令也都以 `TAB` 結束。
-5. 鍵入 `CREATE KEYSPACE my_new_keyspace <TAB><TAB><TAB>`。您應該會看到抄寫類別的選項。
-6. 您可以在這裡選擇 `SimpleStrategy`，因為叢集不會跨越多個資料中心。
-7. 再次按下 `<TAB><TAB>`，並對 replication_factor 輸入 3。然後，以大括弧 `}` 括住，並以 `;<enter>` 完成陳述式。
-
-  您剛剛建立了第一個 KEYSPACE，並預設為將資料抄寫至叢集中的所有三個節點。
-
-8. 現在，您可以使用索引鍵空間：
-
-  ```sql
-  USE my_new_keyspace;
-  ```
-
-  您的 Shell 現在會顯示，您的指令提示依預設正在使用您的索引鍵空間：
-
-  ![執行 `CREATE KEYSPACE` 及 `USE`。](./images/running_create_keyspace_use.png "執行 `CREATE KEYSPACE` 及 `USE`")
-
-  每個表格都必須有一個索引鍵空間。當您在這裡的 Shell 中建立一個索引鍵空間時，它將預設為 `my_new_keyspace`。
-
-  儘管 Sccylla/Cassandra 已發展成具有樣子非常類似 SQL 的綱目語言，實際上並不是這樣。與 RDBMS 不同的是，這裡的列與索引鍵值查閱非常相似。只是剛好此值具有我們即將定義的彈性綱目：
-
-9. 在 Shell 中鍵入下列 `CREATE TABLE` 指令，以建立要移入範例的位置。
-
-  ```sql
-  CREATE TABLE my_new_table (
-    my_table_id uuid,
-    last_name text,
-    first_name text,
-    PRIMARY KEY(my_table_id)
-  );
-  ```
 
 ## 從 JVM 連接
 
@@ -117,27 +72,40 @@ cluster.close()
 
 ## 從 Python 連接
 
-也支援 Java 以外的其他語言。Python 是很棒的範例。`cqlsh` 甚至是以 Python 撰寫的。別搞錯，這裡的支援才是最新的：
+若要連接 Python 應用程式，請使用 [DataStax Python 驅動程式](https://github.com/datastax/python-driver)。安裝可以透過 pip 執行：
 
 ```shell
 pip install cassandra-driver
 ```
 
-這會使用 Python 套件管理程式 `pip` 取得驅動程式。下列的執行方式與準備陳述式並執行插入的 Java 程式碼非常類似：
+這會使用 Python 套件管理程式 `pip` 取得驅動程式。驅動程式預期有在啟用 TLS/SSL 時使用的憑證，而搭配使用憑證與服務的指示位於[使用 LE 憑證](./scylla-certificates.html)頁面上。驅動程式所需的所有其他資訊都位於服務_概觀_ 的_連線字串_ 中。
+
+下列的執行方式與準備陳述式並執行插入的 Java 程式碼非常類似：
 
 ```python
+import ssl
+import uuid
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
-import uuid
+
+ssl_options = {
+    "ca_certs":"/path_to_cert/lecert.pem",
+    "ssl_version":ssl.PROTOCOL_TLSv1_2
+}
 
 auth_provider = PlainTextAuthProvider(
                   username='scylla',
-                  password='XOEDTTBPZGYAZIQD')
+                  password='your_password')
 
 cluster = Cluster(
-            contact_points = ["aws-us-east-1-portal9.dblayer.com"],
+            contact_points = [
+                "portal-59b813def16d6e0014003b45224-8.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com",
+                "portal-59b813def16d6e0014003b47186-6.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com",
+                "portal-59b813def16d6e0014003b49208-7.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com"
+                ],
             port = 15401,
-            auth_provider = auth_provider)
+            auth_provider = auth_provider,
+            ssl_options=ssl_options)
 
 session = cluster.connect('my_new_keyspace')
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016,2018
-lastupdated: "2017-07-13"
+lastupdated: "2018-03-27"
 ---
 
 {:new_window: target="_blank"}
@@ -34,6 +34,9 @@ ScyllaDB 是 Cassandra 宽列分布式数据库的内部替代产品。ScyllaDB 
 - 使用白名单来限制对数据库的访问。 
 
 有关更多信息，请参阅[设置](./dashboard-settings.html)。
+
+{{site.data.keyword.composeForScyllaDB}} 依赖于 Cloud Foundry 角色来管理对服务的访问权。只有具有开发者角色的用户才能查看或使用服务仪表板。有关 Cloud Foundry 角色的更多信息，请参阅 [Cloud Foundry 访问权](https://console.bluemix.net/docs/iam/cfaccess.html#cfaccess)和[管理 Cloud Foundry 访问权](https://console.bluemix.net/docs/iam/mngcf.html#mngcf)页面。
+{: .tip}
 
 ## 连接到 {{site.data.keyword.composeForScyllaDB}}
 

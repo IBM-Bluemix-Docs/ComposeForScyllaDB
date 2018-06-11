@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2017-06-16"
+lastupdated: "2018-02-28"
 ---
 
 {:new_window: target="_blank"}
@@ -15,51 +15,6 @@ lastupdated: "2017-06-16"
 {: #connecting-external-app}
 
 {{site.data.keyword.composeForScyllaDB_full}} に接続するために必要な情報は、{{site.data.keyword.composeForPostgreSQL_full}} サービスの*「概要」*ページに表示されます。
-
-`cqlsh` を使用して、{{site.data.keyword.composeForScyllaDB}} に直接接続できます。 このツールをローカル・デバイスに用意する方法は、ローカル・プラットフォームに応じて異なります。 最も簡単な方法は、プラットフォームに応じた方式で最新の Cassandra リリース (最新バージョンはバージョン 2.1.8 (Scylla) をまだサポートしています) をインストールし、組み込みの `cqlsh` コマンドを使用する方法です。
-
-以下は、Mac の場合の例です。
-
-1. `brew install cassandra` と入力し、Cassandra を `homebrew` を使用してインストールします。
-2. 「概要」ページからコマンドをコピーします。
-
-  ![`cqlsh` 接続ストリングの例。](./cqlsh_connection_string "cqlsh 接続ストリングの例。")
-
-3. コマンドをシェルに貼り付けて実行します。
-
-  ![`cqlsh` シェル。](./cqlsh_shell.png "cqlsh シェル")
-
-4. `HELP` と入力すると、シェルに多数の機能があることがわかります。 さらに便利なことに、これらのコマンドはすべて `TAB` による入力補完機能に対応しています。
-5. `CREATE KEYSPACE my_new_keyspace <TAB><TAB><TAB>` と入力します。 複製クラスとして選択できるものが表示されます。
-6. クラスターは複数のデータ・センターにまたがっていないので、ここでは `SimpleStrategy` を選択できます。
-7. もう一度 `<TAB><TAB>` と押して、replication_factor に 3 を入力します。 次に、`}` で中括弧を閉じ、ステートメントを `;<enter>` で終了します。
-
-  これで、最初の KEYSPACE が作成され、データをクラスター内の 3 つのすべてのノードに複製することがデフォルトに設定されました。
-
-8. 次のようにしてキースペースを使用できます。
-
-  ```sql
-  USE my_new_keyspace;
-  ```
-
-  コマンド・プロンプトがデフォルトでキースペースを使用することがシェルに表示されます。
-
-  ![`CREATE KEYSPACE` と `USE` を実行します。](./images/running_create_keyspace_use.png "`CREATE KEYSPACE` と `USE` を実行します。")
-
-  キースペースはすべての表に必要です。 この場合にシェルで表を作成すると、デフォルトで `my_new_keyspace` に設定されます。
-
-  Scylla/Cassandra は、SQL に非常に似たスキーマ言語を持つように進化しましたが、 これはあまり当てはまりません。 RDBMS とは異なり、ここでの行は、むしろキー値の検索に似ています。 ここでは、例外的に柔軟な値のスキーマを定義することにします。
-
-9. 次の `CREATE TABLE` コマンドをシェルに入力して、例でデータを設定する場所を作成します。
-
-  ```sql
-  CREATE TABLE my_new_table (
-    my_table_id uuid,
-    last_name text,
-    first_name text,
-    PRIMARY KEY(my_table_id)
-  );
-  ```
 
 ## JVM からの接続
 
@@ -117,27 +72,40 @@ cluster.close()
 
 ## Python からの接続
 
-Java 以外の言語のサポートも非常に強固です。 Python が良い例です。 `cqlsh` は Python でも作成されています。 このため、ここでいうサポートとは最新であるだけではないので注意してください。
+python アプリケーションを接続するには、[DataStax Python Driver](https://github.com/datastax/python-driver) を使用します。インストールは pip を使用して行うことができます。
 
 ```shell
 pip install cassandra-driver
 ```
 
-これにより、Python パッケージ・マネージャー `pip` を使用してドライバーをプルします。 以下は、ステートメントを準備して挿入を実行する Java コードに非常に似た動作になります。
+これにより、Python パッケージ・マネージャー `pip` を使用してドライバーをプルします。 TLS/SSL が有効な場合、ドライバーは証明書の使用を予期します。サービスで証明書を使用する方法については、[LE 証明書の使用](./scylla-certificates.html)のページを参照してください。ドライバーに必要なその他のすべての情報は、サービスの_「概要」_の_「接続ストリング」_にあります。
+
+以下は、ステートメントを準備して挿入を実行する Java コードに非常に似た動作になります。
 
 ```python
+import ssl
+import uuid
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
-import uuid
+
+ssl_options = {
+    "ca_certs":"/path_to_cert/lecert.pem",
+    "ssl_version":ssl.PROTOCOL_TLSv1_2
+}
 
 auth_provider = PlainTextAuthProvider(
                   username='scylla',
-                  password='XOEDTTBPZGYAZIQD')
+                  password='your_password')
 
 cluster = Cluster(
-            contact_points = ["aws-us-east-1-portal9.dblayer.com"],
+            contact_points = [
+                "portal-59b813def16d6e0014003b45224-8.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com",  
+                "portal-59b813def16d6e0014003b47186-6.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com",  
+                "portal-59b813def16d6e0014003b49208-7.bmix-dal-ys1-fd6a5b7e-e120-43f3-95ea-e40028e540a8.composeci-us-ibm-com.composedb.com"
+                ],
             port = 15401,
-            auth_provider = auth_provider)
+            auth_provider = auth_provider,
+            ssl_options=ssl_options)
 
 session = cluster.connect('my_new_keyspace')
 

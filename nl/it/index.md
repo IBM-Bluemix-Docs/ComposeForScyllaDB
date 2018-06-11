@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016,2018
-lastupdated: "2017-07-13"
+lastupdated: "2018-03-27"
 ---
 
 {:new_window: target="_blank"}
@@ -17,7 +17,7 @@ lastupdated: "2017-07-13"
 ScyllaDB è un sostituto del database distribuito su colonna ampia Cassandra. ScyllaDB è scritto in C++, piuttosto che il Java di Cassandra, per un migliore utilizzo della risorsa che può dare un risultato 10 volte migliore nelle prestazioni nei riferimenti. In aggiunta per mantenere la compatibilità con i file di dati e lo strumento Cassandra, ScyllaDB aggiunge le funzionalità di ottimizzazione automatica. {{site.data.keyword.composeForScyllaDB_full}} estende le funzionalità di ScyllaDB a gestirle al tuo posto, offrendo un sistema di distribuzione con ridimensionamento automatico facile da utilizzare che distribuisce l'elevata disponibilità e la ridondanza e i backup automatizzati.
 {:shortdesc}
 
-## Creazione di un'istanza del servizio {{site.data.keyword.composeForScyllaDB}}
+## Creazione di una istanza del servizio {{site.data.keyword.composeForScyllaDB}}
 
 Puoi creare un servizio {{site.data.keyword.composeForScyllaDB}} dalla pagina [{{site.data.keyword.composeForScyllaDB}}](https://console.{DomainName}/catalog/services/compose-for-scylladb/) nel catalogo {{site.data.keyword.cloud_notm}}.
 
@@ -34,6 +34,9 @@ Puoi gestire il tuo servizio dal dashboard del servizio. Qui puoi trovare le inf
 - utilizzare le whitelist per limitare l'accesso ai tuoi database 
 
 Per ulteriori informazioni, consulta [Impostazioni](./dashboard-settings.html).
+
+{{site.data.keyword.composeForScyllaDB}} si basa sui ruoli Cloud Foundry per gestire l'accesso al servizio. Solo gli utenti con il ruolo di sviluppatore possono visualizzare o utilizzare il dashboard del servizio. Per ulteriori informazioni sui ruoli Cloud Foundry, consulta le pagine [Cloud Foundry access](https://console.bluemix.net/docs/iam/cfaccess.html#cfaccess) e [Managing Cloud Foundry access](https://console.bluemix.net/docs/iam/mngcf.html#mngcf).
+{: .tip}
 
 ## Connessione a {{site.data.keyword.composeForScyllaDB}}
 

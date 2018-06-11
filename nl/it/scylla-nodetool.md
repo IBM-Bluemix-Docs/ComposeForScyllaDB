@@ -15,7 +15,7 @@ lastupdated: "2017-12-11"
 {: #using-nodetool}
 
 Per utilizzare nodetool per gestire il tuo servizio {{site.data.keyword.composeForScyllaDB_full}}, dovrai:
-1. Aggiungere una chiave SSH 
+1. Aggiungere una chiave SSH
 2. Aprire un tunnel utilizzando il comando SSH nella scheda _Socks_ delle stringhe di connessione.
 
 Quando viene aperto un tunnel, puoi utilizzare i comandi `nodetool` con il formato mostrato nella scheda _Nodetool_ delle stringhe di connessione. Il comando fornito restituisce lo stato del cluster Scylla.
@@ -51,7 +51,7 @@ version|Stampa la versione DB.
 {: caption="Tabella 1. Comandi nodetool disponibili" caption-side="top"}
 
 
-## Comandi nodetool bloccati 
+## Comandi nodetool bloccati
 I seguenti comandi sono bloccati dall'utilizzo di nodetool quando applicato a un servizio {{site.data.keyword.composeForScyllaDB}}:
 
 - clearsnapshot

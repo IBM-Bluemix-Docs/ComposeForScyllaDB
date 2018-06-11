@@ -23,7 +23,7 @@ Assicurati di avere un account [{{site.data.keyword.cloud_notm}}][ibm_cloud_sign
 
 Dovrai anche installare [Node.js](https://nodejs.org/) e [Git](https://git-scm.com/downloads).
 
-## Passo 1: crea un'istanza del servizio {{site.data.keyword.composeForScyllaDB}}
+## Passo 1: crea una istanza del servizio {{site.data.keyword.composeForScyllaDB}}
 {: #create-service}
 
 Puoi creare un servizio {{site.data.keyword.composeForScyllaDB}} dalla pagina [{{site.data.keyword.composeForScyllaDB}}](https://console.{DomainName}/catalog/services/compose-for-scylladb/) nel catalogo {{site.data.keyword.cloud_notm}}.
@@ -135,7 +135,7 @@ Lo strumento CLI {{site.data.keyword.cloud_notm}} è quello che utilizzerai per 
 
 2. Modifica il valore `host` con qualcosa di univoco. L'host che scegli determinerà il dominio secondario dell'URL della tua applicazione:  `<host>.mybluemix.net`.
 3. Modifica il valore `name`. Il valore che scegli sarà il nome dell'applicazione come viene visualizzato nel tuo dashboard {{site.data.keyword.cloud_notm}}.
-4. Aggiorna il valore `services` in modo che corrisponda al nome del servizio che hai creato in [Crea un'istanza del servizio {{site.data.keyword.composeForScyllaDB}}](#create-service). 
+4. Aggiorna il valore `services` in modo che corrisponda al nome del servizio che hai creato in [Crea una istanza del servizio {{site.data.keyword.composeForScyllaDB}}](#create-service). 
 
 ## Passo 9: trasmetti la tua applicazione a {{site.data.keyword.cloud_notm}}.
 
