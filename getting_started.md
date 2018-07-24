@@ -30,7 +30,7 @@ You can create a {{site.data.keyword.composeForScyllaDB}} service from the [{{si
 
 Choose a service name, region, organization and space to provision the service in, and for the **Select a database version** field, choose _Latest Preferred Version_.
 
-Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForScyllaDB}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [Compose Enterprise](../ComposeEnterprise/index.html) documentation for more details.
+Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForScyllaDB}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise/index.html) documentation for more details.
 
 Click **Create** to provision your service. Provisioning can take a while to complete. You can check on the progress by going to the _Manage_ view for the service.
 
@@ -70,16 +70,16 @@ The {{site.data.keyword.cloud_notm}} CLI tool tool is what you'll use to communi
 1. Connect to {{site.data.keyword.cloud_notm}} in the command line tool and follow the prompts to log in.
 
   ```
-  bx login
+  ibmcloud login
   ```
 
-  If you have a federated user ID, use the `bx login --sso` command to log in with your single sign on ID. See [Logging in with a federated ID](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id) to learn more.
+  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign on ID. See [Logging in with a federated ID](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id) to learn more.
   {: .tip}
 
 2. Make sure you are targetting the correct {{site.data.keyword.cloud_notm}} org and space.
 
   ```
-  bx target --cf
+  ibmcloud target --cf
   ```
 
   Choose from the options provided, using the same values you used when you created the service.
