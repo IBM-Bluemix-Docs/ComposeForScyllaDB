@@ -18,7 +18,7 @@ lastupdated: "2018-06-18"
 
 API documentation for Compose services in {{site.data.keyword.cloud_notm}} is on [The {{site.data.keyword.cloud_notm}} Compose API](https://www.compose.com/articles/the-ibm-cloud-compose-api/) page. That API is based on the full Compose API for the Compose platform and Compose. The full reference documentation for that API {{site.data.keyword.cloud_notm}} is available at [https://apidocs.compose.com/](https://apidocs.compose.com/).
 
-More useful database related information is in the [Compose Articles](https://www.compose.com/articles/) blog and our [curated collection of Scylla-related topics](https://www.compose.com/articles/curated-collection-scylla/) for more how-to's and information on MongoDB on Compose.
+More useful database related information is in the [Compose Articles](https://www.compose.com/articles/) blog and our [curated collection of Scylla-related topics](https://www.compose.com/articles/curated-collection-scylla/) for more how-to's and information on Scylla on Compose.
 
 ## {{site.data.keyword.cloud_notm}} Enterprise
 

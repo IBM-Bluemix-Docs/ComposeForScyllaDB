@@ -30,7 +30,7 @@ All {{site.data.keyword.composeForScyllaDB}} HAProxy portals have TLS/SSL enable
 
 ## Connection Limits
 
-The two mongos routers have a connection limit of 1000 connections per HAProxy. Exceeding the connection limit will make your service unresponsive. You can manage connections from your application through your driver's connection pooling feature.
+Database connections have a connection limit of 1000 connections per portal. Exceeding the connection limit will make your service unresponsive. You can manage connections from your application through your driver's connection pooling feature.
 
 ## Proxy Timeouts
 
