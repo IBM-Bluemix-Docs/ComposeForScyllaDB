@@ -14,9 +14,9 @@ lastupdated: "2017-12-11"
 # Using nodetool
 {: #using-nodetool}
 
-To use nodetool to administer your {{site.data.keyword.composeForScyllaDB_full}} service, you have to first add an SSH key, then open a tunnel using the SSH command in the _Socks_ tab of the connection strings.
+To use nodetool to administer your {{site.data.keyword.composeForScyllaDB_full}} service, first you need to add an SSH key, then open a tunnel by using the SSH command in the _Socks_ tab of the connection strings.
 
-When the tunnel is open, you can use `nodetool` commands with the format shown in the _Nodetool_ tab of the connection strings. The command provided returns the status of the Scylla cluster.
+When the tunnel is open, you can use `nodetool` commands, by using the format shown in the _Nodetool_ tab of the connection strings. The example command that is provided returns the status of the Scylla cluster.
 
 ## Available nodetool Commands
 
@@ -24,16 +24,16 @@ Nodetool has a wide range of commands, but their use is limited to avoid situati
 
 Command|Function
 ----------|-----------
-`cfhistograms`|Provide statistics about a table, including number of SSTables, read/write latency, partition size and column count.
+`cfhistograms`|Provide statistics about a table, including number of SSTables, read/write latency, partition size, and column count.
 `cfstats`|Provide in-depth diagnostics regard column family.
 `cleanup`|Trigger the immediate cleanup of keys no longer belonging to a node
 `compact`|Force a (major) compaction on one or more column families.
 `compactionhistory`|Print history of compaction.
 `compactionstats`|Print statistics on compactions.
-`describecluster`|Print the name, snitch, partitioner and schema version of a cluster.
+`describecluster`|Print the name, snitch, partitioner, and schema version of a cluster.
 `describering <keyspace>`|Show the token ranges information of a keyspace.
 `flush`|Flush one or more column families.
-`help`|Print help.
+`help`|Prints help.
 `getendpoints <keyspace> <cfname> <key>`|Print the end points that own the key.
 `gossipinfo`|Show the gossip information for the cluster.
 `info`|Print node information.
@@ -54,21 +54,21 @@ Command|Function
 
 The following commands are blocked from use by nodetool when applied to a {{site.data.keyword.composeForScyllaDB}} service:
 
-- clearsnapshot
-- decommision
-- disablebackup
-- disablebinary
-- disablegossip
-- drain
-- enablebackup
-- enablebinary
-- enablegossip
-- getlogginglevels
-- listsnapshots
-- rebuild
-- refresh
-- removenode
-- setlogginglevel
-- settraceprobability
-- snapshot
-- stop
+- `clearsnapshot`
+- `decommision`
+- `disablebackup`
+- `disablebinary`
+- `disablegossip`
+- `drain`
+- `enablebackup`
+- `enablebinary`
+- `enablegossip`
+- `getlogginglevels`
+- `listsnapshots`
+- `rebuild`
+- `refresh`
+- `removenode`
+- `setlogginglevel`
+- `settraceprobability`
+- `snapshot`
+- `stop`

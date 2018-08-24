@@ -36,7 +36,7 @@ You can manage your service from the service dashboard. Here you can find inform
 For more information, see [Settings](./dashboard-settings.html).
 
 {{site.data.keyword.composeForScyllaDB}} relies on Cloud Foundry roles to manage access to the service. Only users with the Developer role can see or use the service dashboard. For more information on Cloud Foundry roles, see the [Cloud Foundry access](https://console.{DomainName}/docs/iam/cfaccess.html#cfaccess) and the [Managing Cloud Foundry access](https://console.{DomainName}/docs/iam/mngcf.html#mngcf) pages.
-{: .tip}
+{: tip}
 
 ## Connecting to {{site.data.keyword.composeForScyllaDB}}
 

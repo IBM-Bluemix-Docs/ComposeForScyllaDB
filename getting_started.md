@@ -14,38 +14,38 @@ lastupdated: "2018-05-29"
 
 
 # Getting started tutorial
-This tutorial uses the [compose-scylladb-helloworld-nodejs](https://github.com/IBM-Cloud/compose-scylladb-helloworld-nodejs) sample app to demonstrate how to use Node.js to connect to an {{site.data.keyword.composeForScyllaDB_full}} service. The application creates, reads from, and writes to a database using data supplied through the app's web interface.
+The getting started tutorial uses a [sample app](https://github.com/IBM-Cloud/compose-scylladb-helloworld-nodejs) to demonstrate how to use Node.js to connect to an {{site.data.keyword.composeForScyllaDB_full}} service by using the provided credentials. The application uses a web interface to create, read from, and write data to a database.
 {: shortdesc}
 
 ## Before you begin
 
-Make sure you have an [{{site.data.keyword.cloud_notm}} account][ibm_cloud_signup_url]{:new_window}.
+Make sure that you have an [{{site.data.keyword.cloud_notm}} account][ibm_cloud_signup_url]{:new_window}.
 
-You'll also need to install [Node.js](https://nodejs.org/) and [Git](https://git-scm.com/downloads).
+You also need to install [Node.js](https://nodejs.org/) and [Git](https://git-scm.com/downloads).
 
-## Step 1: Create a {{site.data.keyword.composeForScyllaDB}} service instance
+## Step 1. Create a {{site.data.keyword.composeForScyllaDB}} service instance
 {: #create-service}
 
 You can create a {{site.data.keyword.composeForScyllaDB}} service from the [{{site.data.keyword.composeForScyllaDB}} page](https://console.{DomainName}/catalog/services/compose-for-scylladb/) in the {{site.data.keyword.cloud_notm}} catalog.
 
 Choose a service name, region, organization and space to provision the service in, and for the **Select a database version** field, choose _Latest Preferred Version_.
 
-Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForScyllaDB}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise/index.html) documentation for more details.
+Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForScyllaDB}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation that is required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise/index.html) documentation for more details.
 
 Click **Create** to provision your service. Provisioning can take a while to complete. You can check on the progress by going to the _Manage_ view for the service.
 
 You won't be able to connect an application to the service until provisioning has completed.
-{: .tip}
+{: tip}
 
-## Step 2: Clone the Hello World sample app from Github
+## Step 2. Clone the Hello World sample app from GitHub
 
-Clone the Hello World app to your local environment from your terminal using the following command:
+Clone the Hello World app to your local environment from your terminal.
 
 ```
 git clone https://github.com/IBM-Cloud/compose-scylladb-helloworld-nodejs.git
 ```
 
-## Step 3: Install the app dependencies
+## Step 3. Install the app dependencies
 
 Use npm to install dependencies.
 
@@ -61,11 +61,11 @@ Use npm to install dependencies.
   npm install
   ```
 
-## Step 4: Download and install the {{site.data.keyword.cloud_notm}} CLI tool
+## Step 4. Download and install the {{site.data.keyword.cloud_notm}} CLI tool
 
-The {{site.data.keyword.cloud_notm}} CLI tool tool is what you'll use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For details, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
+The {{site.data.keyword.cloud_notm}} CLI tool tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For details, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
 
-## Step 5: Connect to {{site.data.keyword.cloud_notm}}
+## Step 5. Connect to {{site.data.keyword.cloud_notm}}
 
 1. Connect to {{site.data.keyword.cloud_notm}} in the command line tool and follow the prompts to log in.
 
@@ -73,18 +73,18 @@ The {{site.data.keyword.cloud_notm}} CLI tool tool is what you'll use to communi
   ibmcloud login
   ```
 
-  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign on ID. See [Logging in with a federated ID](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id) to learn more.
-  {: .tip}
+  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. See [Logging in with a federated ID](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id) to learn more.
+  {: tip}
 
-2. Make sure you are targetting the correct {{site.data.keyword.cloud_notm}} org and space.
+2. Make sure that you are targeting the correct {{site.data.keyword.cloud_notm}} org and space.
 
   ```
   ibmcloud target --cf
   ```
 
-  Choose from the options provided, using the same values you used when you created the service.
+  Choose from the options provided, by using the same values that you used when you created the service.
 
-## Step 6: Update the app's manifest file
+## Step 6. Update the app's manifest file
 {: #update-manifest}
 
 {{site.data.keyword.cloud_notm}} uses a manifest file - `manifest.yml` to associate an application with a service. Follow these steps to create your manifest file.
@@ -101,36 +101,36 @@ The {{site.data.keyword.cloud_notm}} CLI tool tool is what you'll use to communi
       - my-compose-for-scylladb-service
   ```
 
-2. Change the `host` value to something unique. The host you choose will determinate the subdomain of your application's URL:  `<host>.mybluemix.net`.
-3. Change the `name` value. The value you choose will be the name of the app as it appears in your {{site.data.keyword.cloud_notm}} dashboard.
+2. Change the `host` value to something unique. The host that you choose will determinate the subdomain of your application's URL:  `<host>.mybluemix.net`.
+3. Change the `name` value. The value that you choose will be the name of the app as it appears in your {{site.data.keyword.cloud_notm}} dashboard.
 4. Update the `services` value to match the name of the service you created in [Create a {{site.data.keyword.composeForScyllaDB}} service instance](#create-service). 
   
-## Step 7: Push the app to {{site.data.keyword.cloud_notm}}.
+## Step 7. Push the app to {{site.data.keyword.cloud_notm}}.
 
-When you push the app it will automatically be bound to the service specified in the manifest file.
+When you push the app, it is automatically bound to the service specified in the manifest file.
 
 ```
 bx cf push
 ```
 
-This step will fail if the service has not finished provisioning from Step 1. You can check its progress by going to the _Manage_ view for the service.
-{: .tip}
+This step fails if the service has not finished provisioning from Step 1. You can check its progress by going to the _Manage_ view for the service.
+{: tip}
   
-## Step 8: Check the app is connected to your {{site.data.keyword.composeForScyllaDB}} service
+## Step 8. Check the app is connected to your {{site.data.keyword.composeForScyllaDB}} service
 
-1. Navigate to your {{site.data.keyword.composeForScyllaDB}} service dashboard
+1. Go to your {{site.data.keyword.composeForScyllaDB}} service dashboard
 2. Select _Connections_ from the dashboard menu. Your application should be listed under _Connected Applications_.
 
-If your application is not listed, repeat Steps 7 ad 8, making sure you have entered the correct details in [manifest.yml](#update-manifest).
+If your application is not listed, repeat Steps 7 and 8, making sure you enter the correct details in [manifest.yml](#update-manifest).
 
-## Step 9: Use the app
+## Step 9. Use the app
 
-Now, when you visit `<host>.mybluemix.net/` you will be able to view the contents of your {{site.data.keyword.composeForScyllaDB}} collection. As you add words and their definitions they are added to the database and displayed. If you stop and restart the app you'll see any words and definitions you've already added are now listed.
+Now, when you visit `<host>.mybluemix.net/` you can see the contents of your {{site.data.keyword.composeForScyllaDB}} collection. As you add words and their definitions they are added to the database and displayed. If you stop and restart the app, you'll see any words and definitions you've already added are now listed.
 
 ## Running the app locally
 
 Instead of pushing the app into {{site.data.keyword.cloud_notm}} you can run it locally to test the connection to your
- {{site.data.keyword.composeForScyllaDB}} service instance. To connect to the service you'll need to create a set of service credentials.
+ {{site.data.keyword.composeForScyllaDB}} service instance. To connect to the service, you'll need to create a set of service credentials.
 
 1. From your {{site.data.keyword.cloud_notm}} dashboard, open your {{site.data.keyword.composeForScyllaDB}} service instance.
 2. Select _Service Credentials_ from the main menu to open the Service Credentials view.
@@ -152,8 +152,8 @@ Instead of pushing the app into {{site.data.keyword.cloud_notm}} you can run it 
   ```
 7. Save the file as `vcap-local.json` in the directory where the sample app is located.
 
-To avoid accidentally exposing your credentials when pushing an application to Github or {{site.data.keyword.cloud_notm}} you should make sure that the file containing your credentials is listed in the relevant ignore file. If you open `.cfignore` and `.gitignore` in your application directory you'll see that `vcap-local.json` is listed in both, so it won't be included in the files that are uploaded when you push the app to either Github or {{site.data.keyword.cloud_notm}}.
-{: .tip}
+To avoid accidentally exposing your credentials when pushing an application to GitHub or {{site.data.keyword.cloud_notm}} you should make sure that the file containing your credentials is listed in the relevant ignore file. If you open `.cfignore` and `.gitignore` in your application directory you'll see that `vcap-local.json` is listed in both, so it won't be included in the files that are uploaded when you push the app to either GitHub or {{site.data.keyword.cloud_notm}}.
+{: tip}
 
 Now start the local server.
 
@@ -163,11 +163,11 @@ npm start
 
 The app is now running at [http://localhost:8080](http://localhost:8080). You can add words and definitions to your {{site.data.keyword.composeForScyllaDB}} database. When you stop and restart the app, any words you have already added are displayed when you refresh the page.
 
-For information about the credentials you created for the application to connect to your service, see [Available Credentials](./connecting-bluemix-app.html#available-credentials).
+For more information about the credentials you created for the application to connect to your service, see [Available Credentials](./connecting-bluemix-app.html#available-credentials).
 
 ## Next steps
 
-To understand more about how the [compose-scylladb-helloworld-nodejs](https://github.com/IBM-Cloud/compose-scylladb-helloworld-nodejs) sample app works, you can read the application's readme file, or the code comments in `server.js`, which give some information about the app's functions.
+To understand more about how the [sample app](https://github.com/IBM-Cloud/compose-scylladb-helloworld-nodejs) works, you can read the application's readme file, or the code comments in `server.js`, which give some information about the app's functions.
 
 To start exploring your {{site.data.keyword.composeForScyllaDB}} service, see the following topics about the service dashboard:
 

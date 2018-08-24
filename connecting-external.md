@@ -14,11 +14,13 @@ lastupdated: "2018-02-28"
 # Connecting an external application
 {: #connecting-external-app}
 
-You can find the information you need to connect to {{site.data.keyword.composeForScyllaDB_full}} on the *Overview* page of your {{site.data.keyword.composeForPostgreSQL_full}} service.
+You can find the information that you need to connect to {{site.data.keyword.composeForScyllaDB_full}} on the *Overview* page of your {{site.data.keyword.composeForScyllaDB}} service.
 
 ## Connecting from the JVM
 
-One of the most advanced drivers for Cassandra is the Java driver. This makes sense considering Cassandra is written in Java. What follows is a [Groovy](http://www.groovy-lang.org/documentation.html#gettingstarted) script. For those who utilize just about any JVM language translating from Groovy to your language of choice should be relatively straightforward:
+One of the most advanced drivers for Cassandra is the Java driver, which makes sense given that Cassandra is written in Java.
+
+The example that is given here is a [Groovy](http://www.groovy-lang.org/documentation.html#gettingstarted) script. If you're happy to use just about any JVM language, converting from Groovy to your language of choice should be relatively straightforward:
 
 ```java
 @Grab('com.datastax.cassandra:cassandra-driver-core:3.1.0')
@@ -57,30 +59,31 @@ session.close()
 cluster.close()
 ```
 
-To get started we pull in the latest Cassandra driver:
+To get started, pull in the latest Cassandra driver.
 
 ```java
 @Grab('com.datastax.cassandra:cassandra-driver-core:3.1.0')
 ```
 
-After all of the imports we use a `Cluster.builder()` to build up the configuration. Just one  of the `ContactPoint`s is used to connect. From that connection the other nodes in the cluster are discovered. If that `ContactPoint` is unreachable on `connect` then another is used which is why we add all three.
+After all of the imports, we use a `Cluster.builder()` to build up the configuration. Only one of the `ContactPoint`s is used to connect. From that connection, the other nodes in the cluster are discovered. If that `ContactPoint` is unreachable on `connect`, then another is used, which is why we add all three.
 
-`PreparedStatement`s may be familiar since they are analogous to other DBs' features of the same name. The statement is parsed and held at the server ready to be used over and over again. The following calls to `bind` and `execute` populate and send the data over to the server for actual execution. While there are simpler methods for one off execution, it is good to highlight such a useful feature.
+You might be familiar with `PreparedStatement`s, since they are analogous to features of the same name that are offered by other databases. The statement is parsed, and held at the server ready to be used and reused. The following calls to `bind` and `execute` populate and send the data to the server for execution. While there are simpler methods for one-off execution, this is a useful feature to be aware of.
 
-To prove that the script works go back to your `cqlsh` and query the table:
+To prove that the script works, go back to your `cqlsh` and query the table.
+
 ![Results from `SELECT` in `cqlsh`.](./images/results_select_java.png "Results from Select")
 
 ## Connecting from Python
 
-To connect your python application, use the [DataStax Python Driver](https://github.com/datastax/python-driver). Installation can be done through pip:
+To connect your python application, use the [DataStax Python Driver](https://github.com/datastax/python-driver). YOu can use `pip` to install the driver.
 
 ```shell
 pip install cassandra-driver
 ```
 
-This pulls in the driver with a python package manager `pip`. The driver expects a cetificate to use when TLS/SSL is enabled, and instructions for using a certificate with your service are on the [Using LE Certificates](./scylla-certificates.html) page. All the other information the driver needs is in the _Connection Strings_ of the service _Overview_.
+The driver expects to use a certificate when TLS/SSL is enabled. You can find instructions for using a certificate with your service on the [Using Certificates](./scylla-certificates.html) page. All the other information the driver needs is in the _Connection Strings_ of the service _Overview_.
 
-The following performs very similarly to the Java code of preparing a statement and executing an insert:
+The example code performs similarly to the Java code, by preparing a statement and executing an insert:
 
 ```python
 import ssl
@@ -116,13 +119,13 @@ my_prepared_insert = session.prepare("""
 session.execute(my_prepared_insert, [uuid.uuid4(), 'Snake', 'Hutton'])
 ```
 
-To verify again we'll run the same `SELECT` command:
+To verify again, we run the same `SELECT` command:
 
 ![Results from `SELECT` in `cqlsh`.](./images/results_select_python.png "Results from Select")
 
 ## Connecting from Node.js
 
-Use node package manager (npm) to install the driver and the needed `uuid` library.
+Use node package manager (`npm`) to install the driver and the needed `uuid` library.
 
 ```shell
 npm install cassandra-driver
@@ -155,6 +158,6 @@ client.execute("INSERT INTO my_new_table(my_table_id, first_name, last_name) VAL
 
 ```
 
-Once again the code connects, and prepares and executes an insert statement. Verify the code with the SELECT command:
+The code connects again, and prepares, and then executes an insert statement. Verify the code with the SELECT command.
 
 ![Results from `SELECT` in `cqlsh`.](./images/results_select_node.png "Results from Select")

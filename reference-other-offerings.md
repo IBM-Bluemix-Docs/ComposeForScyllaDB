@@ -18,12 +18,12 @@ lastupdated: "2018-06-18"
 
 API documentation for Compose services in {{site.data.keyword.cloud_notm}} is on [The {{site.data.keyword.cloud_notm}} Compose API](https://www.compose.com/articles/the-ibm-cloud-compose-api/) page. That API is based on the full Compose API for the Compose platform and Compose. The full reference documentation for that API {{site.data.keyword.cloud_notm}} is available at [https://apidocs.compose.com/](https://apidocs.compose.com/).
 
-More useful database related information is in the [Compose Articles](https://www.compose.com/articles/) blog and our [curated collection of Scylla-related topics](https://www.compose.com/articles/curated-collection-scylla/) for more how-to's and information on Scylla on Compose.
+More useful database-related information is in the [Compose Articles](https://www.compose.com/articles/) blog and our [curated collection of Scylla-related topics](https://www.compose.com/articles/curated-collection-scylla/) for more how-to's and information on Scylla on Compose.
 
 ## {{site.data.keyword.cloud_notm}} Enterprise
 
-This is a service which provides a private, dedicated and isolated cluster for customers. To use this plan, a {{site.data.keyword.composeEnterprise}} cluster has to have been provisioned through the {{site.data.keyword.composeEnterprise_full_notm}} service in the [IBM Cloud catalog](https://console.{DomainName}.net/catalog/).
+{{site.data.keyword.cloud_notm}} Enterprise provides a private, dedicated, and isolated cluster for customers. To use this plan, a {{site.data.keyword.composeEnterprise}} cluster must be provisioned through the {{site.data.keyword.composeEnterprise_full_notm}} service in the [IBM Cloud catalog](https://console.{DomainName}.net/catalog/).
 
-Once you have a {{site.data.keyword.composeEnterprise}} cluster, selecting the {{site.data.keyword.composeForScyllaDB}} service with the Enterprise plan will provision the service onto your dedicated cluster. 
+Once you have a {{site.data.keyword.composeEnterprise}} cluster, select the {{site.data.keyword.composeForScyllaDB}} service with the Enterprise plan to provision the service onto your dedicated cluster. 
 
-More information is available on the [{{site.data.keyword.composeEnterprise}} catalog page](https://console.{DomainName}/catalog/services/compose-enterprise) and in its [documentation](https://console.{DomainName}}/docs/services/ComposeEnterprise/index.html#about-compose-enterprise).
+For more information, see the [{{site.data.keyword.composeEnterprise}} catalog page](https://console.{DomainName}/catalog/services/compose-enterprise), and the {{site.data.keyword.composeEnterprise}} [documentation](https://console.{DomainName}}/docs/services/ComposeEnterprise/index.html#about-compose-enterprise).
