@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2017,2018
-lastupdated: "2017-12-11"
+lastupdated: "2018-05-07"
 ---
 
 {:new_window: target="_blank"}
@@ -25,7 +25,7 @@ _部署详细信息_面板显示服务的详细信息。
 
 服务所提供的数据库类型，以及服务所使用的数据库版本。如果有更新的数据库版本可用，那么会显示通知以及指向服务仪表板中[升级版本](/docs/services/ComposeForScyllaDB/dashboard-settings.html#upgrade-version)部分的链接。
 
-### 名称
+### 标识
 
 服务的内部标识。
 
@@ -43,7 +43,7 @@ _部署详细信息_面板显示服务的详细信息。
 
 ### HTTPS
 
-这是 URI 格式的连接字符串，可供某些客户机库使用，并包含其他库连接所需的所有信息。您可以在[连接外部应用程序](./connecting-external.html)中找到如何使用“连接字符串”进行连接的信息。
+这是 URI 格式的连接字符串，可供某些客户机库使用，并包含其他库连接所需的所有信息。您可以在[连接外部应用程序](./connecting-external.html)中找到如何使用连接字符串进行连接的信息。
 
 ### 命令行
 

@@ -38,7 +38,7 @@ lastupdated: "2017-10-16"
 
 ### 使用 API 查看现有备份
 
-`GET /2016-07/deployments/:id/backups` 端点提供备份列表。将在服务的_概述_中显示基础端点以及服务实例标识和部署标识。例如： 
+`GET /2016-07/deployments/:id/backups` 端点提供了备份列表。这将在服务的_概述_中显示基础端点和服务实例标识。例如： 
 ``` 
 https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INSTANCE_ID/deployments/$DEPLOYMENT_ID/backups
 ```    
@@ -49,44 +49,49 @@ https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INST
 
 ### 使用 API 创建备份
 
-向备份端点发送 POST 请求以启动手动备份：`POST /2016-07/deployments/:id/backups`。其将在运行时立即返回诀窍标识以及有关备份的信息。您需要检查备份端点以查看备份是否已完成，并在使用前查找其 backup_id。使用 `GET /2016-07/deployments/:id/backups/`。
+向备份端点发送 POST 请求以启动手动备份：`POST /2016-07/deployments/:id/backups`。该请求在运行时会立即返回诀窍标识以及有关备份的信息。您需要检查备份端点以查看备份是否已完成，并在使用前查找其 backup_id。请使用 `GET /2016-07/deployments/:id/backups/`。
 
 ## 复原备份
-要将备份复原到新服务实例，请执行以下步骤以查看现有备份，然后单击相应的行以展开要下载的备份的选项。单击**复原**按钮。此时将显示一条消息，通知您已启动复原。新服务实例将自动命名为“scylla-restore-[timestamp]”，并在供应启动时显示在仪表板上。
+要将备份复原到新的服务实例，请执行以下操作：
+
+1. 执行以下步骤以查看现有备份。
+2. 单击相应的行以展开要下载的备份的选项。
+3. 单击**复原**按钮。此时将显示一条消息，通知您已启动复原。新服务实例将自动命名为“scylla-restore-[timestamp]”，并在供应启动时显示在仪表板上。
 
 ### 通过 {{site.data.keyword.cloud_notm}} CLI 复原
 
-通过 {{site.data.keyword.cloud_notm}} CLI，使用以下步骤将备份从正在运行的 Scylla 服务复原到新的 Scylla 服务。 
-1. 如果需要，请[下载并安装](https://console.bluemix.net/docs/cli/index.html#overview)。 
+通过 {{site.data.keyword.cloud_notm}} CLI，使用以下步骤将备份从正在运行的 Scylla 服务复原到新的 Scylla 服务。
+
+1. 如果需要，请[下载并安装 IBM Cloud CLI](https://console.{DomainName}/docs/cli/index.html#overview)。 
 2. 在服务的_备份_页面上查找要从其复原的备份，然后复制备份标识。  
   **或者**  
-使用 `GET /2016-07/deployments/:id/backups` 以通过 Compose API 查找备份及其标识。将在服务的_概述_中显示基础端点和服务实例标识。例如： 
+  通过 Compose API，使用 `GET /2016-07/deployments/:id/backups` 来查找备份及其标识。这将在服务的_概述_中显示基础端点和服务实例标识。例如： 
   ``` 
   https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INSTANCE_ID/deployments/$DEPLOYMENT_ID/backups
   ```  
-响应将包含该服务实例的所有可用备份的列表。选取要从其复原的备份并复制其标识。
+  响应包含该服务实例的所有可用备份的列表。选取要从其复原的备份并复制其标识。
 
-3. 使用相应的帐户和凭证登录。`bx login`（或 `bx login -help` 以查看所有登录选项）。
+3. 使用相应的帐户和凭证登录。`ibmcloud login`（或 `ibmcloud login -help` 以查看所有登录选项）。
 
-4. 切换到您的组织和空间：`bx target -o "$YOUR_ORG" -s "YOUR_SPACE"`
+4. 切换到您的组织和空间：`ibmcloud target -o "$YOUR_ORG" -s "YOUR_SPACE"`
 
-5. 使用 `service create` 命令以供应新服务，并提供在 JSON 对象中复原的源服务和特定备份。例如：
+5. 使用 `service create` 命令以供应新服务，并提供要在 JSON 对象中复原的源服务和特定备份。例如：
 ``` 
-bx service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": "$BACKUP_ID" }'
+ibmcloud service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": "$BACKUP_ID" }'
 ```
-_SERVICE_ 字段应该为 compose-for-scylladb，而 _PLAN_ 字段应该为 Standard 或 Enterprise（取决于环境）。_SERVICE\_INSTANCE\_NAME_ 是放置新服务名称的位置。_source\_service\_instance\_id_ 是备份源的服务实例标识；可通过运行 `bx cf service DISPLAY_NAME --guid` 获取，其中 _DISPLAY\_NAME_ 是备份源自的 Scylla 服务的名称。 
+    对于 _SERVICE_ 字段，请使用“compose-for-scylladb”，对于 _PLAN_ 字段，请选择 Standard 或 Enterprise（取决于环境）。_SERVICE\_INSTANCE\_NAME_ 是放置新服务的名称的位置。_source\_service\_instance\_id_ 是备份源的服务实例标识；可通过运行 `ibmcloud cf service DISPLAY_NAME --guid` 获取，其中 _DISPLAY\_NAME_ 是备份源自的 Scylla 服务的名称。 
   
   企业用户还需要在 JSON 对象中使用 `"cluster_id": "$CLUSTER_ID"` 参数指定要部署到的集群。
   
 ### 迁移到新版本
 
-某些主版本升级在当前正在运行的部署中不可用。您将需要供应正在运行升级版本的新服务，然后使用备份迁移数据。此过程与上面的复原备份相同，但将指定要升级到的版本。
+某些主版本升级在当前正在运行的部署中不可用。您需要供应运行已升级版本的新服务，然后使用备份将数据迁移到其中。此过程与[复原备份](#restoring-a-backup)相同，但将指定要升级到的版本。
 
 ``` 
-bx service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": ""$BACKUP_ID", "db_version":"$VERSION_NUMBER" }'
+ibmcloud service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": ""$BACKUP_ID", "db_version":"$VERSION_NUMBER" }'
 ```
 
 例如，将较旧版本的 {{site.data.keyword.composeForScyllaDB}} 服务复原到运行 Scylla 2.0.3 的新服务类似于以下示例：
 ```
-bx service create compose-for-scylladb Standard migrated_scylla -c '{ "source_service_instance_id": "0269e284-dcac-4618-89a7-f79e3f1cea6a", "backup_id":"5a96d8a7e16c090018884566", "db_version":"2.0.3"  }'
+ibmcloud service create compose-for-scylladb Standard migrated_scylla -c '{ "source_service_instance_id": "0269e284-dcac-4618-89a7-f79e3f1cea6a", "backup_id":"5a96d8a7e16c090018884566", "db_version":"2.0.3"  }'
 

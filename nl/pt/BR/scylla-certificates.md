@@ -14,7 +14,9 @@ lastupdated: "2018-02-06"
 # Usando certificados
 {: #using-certificates}
 
-Alguns aplicativos, especificamente aplicativos baseados em Python como `cqlsh` não sabem como usar certificados auxiliados pela autoridade de certificação. Para estes, são necessários os certificados raiz de Let's Encrypt, salvos como um arquivo `.pem`. Os dois arquivos necessários podem ser localizados em [https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt) e [https://www.identrust.com/certificates/trustid/root-download-x3.html](https://www.identrust.com/certificates/trustid/root-download-x3.html). Nós os concatenamos aqui para a sua facilidade de uso, mas recomendamos para segurança que você faça download e concatene o seu próprio em um arquivo.
+Alguns aplicativos, como `cqlsh`, baseados em Python, não sabem como usar certificados suportados por CA. Para esses aplicativos, são necessários os certificados raiz de Let's Encrypt, salvos como um arquivo `.pem`.
+
+É possível localizar os dois arquivos necessários em [https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt) e [https://www.identrust.com/certificates/trustid/root-download-x3.html](https://www.identrust.com/certificates/trustid/root-download-x3.html). Os arquivos são concatenados aqui para sua facilidade de uso, mas para melhor segurança, é possível fazer download do seu próprio aplicativo usando os links e concatená-los em um arquivo.
 
 ```
 -----BEGIN CERTIFICATE-----

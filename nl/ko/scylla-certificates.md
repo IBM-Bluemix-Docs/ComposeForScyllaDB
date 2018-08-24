@@ -14,7 +14,9 @@ lastupdated: "2018-02-06"
 # 인증서 사용
 {: #using-certificates}
 
-일부 애플리케이션, 특히 `cqlsh`와 같은 Python 기반 애플리케이션은 CA 지원 인증서를 사용하는 방법을 알지 못합니다. 이러한 애플리케이션의 경우 `.pem` 파일로 저장된 Let's Encrypt의 루트 인증서가 필요합니다. 필요한 두 개의 파일은 [https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt) 및 [https://www.identrust.com/certificates/trustid/root-download-x3.html](https://www.identrust.com/certificates/trustid/root-download-x3.html)에서 찾을 수 있습니다. 여기서는 사용하기 쉽도록 이러한 파일을 연결했지만 보안을 위해 자체적으로 하나의 파일에 다운로드하여 연결하도록 권장합니다. 
+일부 애플리케이션(예: `cqlsh`와 같은 Python 기반 애플리케이션)에서는 CA 지원 인증서 사용 방법을 알지 못합니다. 해당 애플리케이션의 경우 `.pem` 파일로 저장된 Let's Encrypt의 루트 인증서가 필요합니다. 
+
+필요한 두 개의 파일은 [https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt) 및 [https://www.identrust.com/certificates/trustid/root-download-x3.html](https://www.identrust.com/certificates/trustid/root-download-x3.html)에서 찾을 수 있습니다. 파일은 사용하기 쉽도록 여기에서 연결되지만, 보안을 강화하기 위해 링크를 사용하여 고유 파일을 다운로드한 다음 파일에 연결할 수 있습니다.
 
 ```
 -----BEGIN CERTIFICATE-----

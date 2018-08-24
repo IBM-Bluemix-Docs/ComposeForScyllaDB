@@ -72,13 +72,13 @@ cluster.close()
 
 ## Python からの接続
 
-python アプリケーションを接続するには、[DataStax Python Driver](https://github.com/datastax/python-driver) を使用します。インストールは pip を使用して行うことができます。
+python アプリケーションを接続するには、[DataStax Python Driver](https://github.com/datastax/python-driver) を使用します。 インストールは pip を使用して行うことができます。
 
 ```shell
 pip install cassandra-driver
 ```
 
-これにより、Python パッケージ・マネージャー `pip` を使用してドライバーをプルします。 TLS/SSL が有効な場合、ドライバーは証明書の使用を予期します。サービスで証明書を使用する方法については、[LE 証明書の使用](./scylla-certificates.html)のページを参照してください。ドライバーに必要なその他のすべての情報は、サービスの_「概要」_の_「接続ストリング」_にあります。
+これにより、Python パッケージ・マネージャー `pip` を使用してドライバーをプルします。 TLS/SSL が有効な場合、ドライバーは証明書の使用を予期します。サービスで証明書を使用する方法については、[LE 証明書の使用](./scylla-certificates.html)のページを参照してください。 ドライバーに必要なその他のすべての情報は、サービスの_「概要」_の_「接続ストリング」_にあります。
 
 以下は、ステートメントを準備して挿入を実行する Java コードに非常に似た動作になります。
 

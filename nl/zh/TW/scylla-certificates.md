@@ -14,7 +14,9 @@ lastupdated: "2018-02-06"
 # 使用憑證
 {: #using-certificates}
 
-部分應用程式（具體而言是 `cqlsh` 這類的 Python 型應用程式）不知道如何使用 CA 支援的憑證）。因此，您需要來自 Let's Encrypt 並儲存為 `.pem` 檔案的主要憑證。您可以在 [https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt) 及 [https://www.identrust.com/certificates/trustid/root-download-x3.html](https://www.identrust.com/certificates/trustid/root-download-x3.html) 找到需要的兩個檔案。我們已在這裡連結它們，以方便您使用，但基於安全，建議您下載並將自己的檔案連結成一個檔案。
+部分應用程式（例如 `cqlsh` 這類的 Python 型應用程式）不知道如何使用 CA 支援的憑證。對於這些應用程式，您需要來自 Let's Encrypt 並儲存為 `.pem` 檔案的主要憑證。
+
+您可以在 [https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt) 及 [https://www.identrust.com/certificates/trustid/root-download-x3.html](https://www.identrust.com/certificates/trustid/root-download-x3.html) 找到需要的兩個檔案。這些檔案在這裡進行連結以方便您使用，但為了更佳的安全性，您可以使用鏈結自行下載並將它們連結成一個檔案。
 
 ```
 -----BEGIN CERTIFICATE-----

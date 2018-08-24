@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2017,2018
-lastupdated: "2017-12-11"
+lastupdated: "2018-05-07"
 ---
 
 {:new_window: target="_blank"}
@@ -25,7 +25,7 @@ O painel _Detalhes da implementação_ mostra detalhes de seu serviço.
 
 O tipo de banco de dados que é oferecido pelo serviço e a versão do banco de dados que seu serviço usa. Se uma versão de banco de dados mais recente estiver disponível, uma notificação será exibida, junto a um link para a seção [Fazer upgrade da versão](/docs/services/ComposeForScyllaDB/dashboard-settings.html#upgrade-version) de seu painel de serviço.
 
-### Nome
+### ID
 
 Um identificador interno para o serviço.
 
@@ -47,7 +47,7 @@ Uma sequência de conexões formatadas por URI que pode ser usada por algumas bi
 
 ### Linha de comandos
 
-A **Linha de comandos** é um comando pré-formatado que chamará `cqlsh` com os parâmetros corretos. O comando exibido inclui as sinalizações necessárias (`--ssl` e `--cqlversion`).  Para usá-lo, você precisará ter as ferramentas do cliente PostgreSQL no sistema local. É possível descobrir mais sobre como fazer isso em [Conectando um aplicativo externo](./connecting-external.html).
+A **Linha de comandos** é um comando pré-formatado que chama `cqlsh` com os parâmetros corretos. O comando exibido inclui as sinalizações necessárias (`--ssl` e `--cqlversion`).  Para usá-lo, é necessário instalar as ferramentas do cliente PostgreSQL no sistema local. É possível descobrir mais sobre como fazer isso em [Conectando um aplicativo externo](./connecting-external.html).
 
 ### Mapas
 Estes mapas de conversão de endereço podem ser usados em aplicativos que requerem alta disponibilidade e podem usar a autodescoberta para localizar os nós no cluster. Eles convertem os endereços de portal externo para os endereços de cluster interno para drivers de cliente que usam esse recurso.

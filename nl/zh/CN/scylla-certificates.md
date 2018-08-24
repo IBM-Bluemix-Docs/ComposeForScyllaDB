@@ -14,7 +14,9 @@ lastupdated: "2018-02-06"
 # 使用证书
 {: #using-certificates}
 
-某些应用程序（尤其是基于 Python 的应用程序，例如，`cqlsh`）不知道如何使用支持 CA 的证书。对于这些应用程序，您需要来自 Let's Encrypt 的根证书，将其另存为 `.pem` 文件。可在 [https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt)和 [https://www.identrust.com/certificates/trustid/root-download-x3.html](https://www.identrust.com/certificates/trustid/root-download-x3.html)处找到所需的两个文件。我们在此处合并了这两个文件以简化使用，但是为确保安全性建议下载并自己合并为一个文件。
+某些应用程序（例如基于 Python 的应用程序，如 `cqlsh`）不知道如何使用 CA 支持的证书。对于这些应用程序，您需要来自 Let's Encrypt 的根证书，并将其另存为 `.pem` 文件。
+
+可以在 [https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt) 和 [https://www.identrust.com/certificates/trustid/root-download-x3.html](https://www.identrust.com/certificates/trustid/root-download-x3.html) 处找到所需的两个文件。此处合并了这两个文件以便于您使用，但是为了获得更好的安全性，您可以使用链接来下载自己的文件，然后将它们合并到一个文件中。
 
 ```
 -----BEGIN CERTIFICATE-----

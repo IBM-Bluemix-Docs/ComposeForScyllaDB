@@ -5,17 +5,9 @@ Copyright:
 lastupdated: "2017-12-11"
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-
 # Paramètres
 
-Ces fonctions vous permettent d'adapter votre service {{site.data.keyword.composeForScyllaDB_full}} de sorte qu'il réponde mieux à vos besoins et exigences.
-
+Utilisez {{site.data.keyword.composeForScyllaDB_full}} pour adapter votre service de sorte qu'il réponde mieux à vos besoins et exigences.
 
 ## Mise à niveau de la version
 

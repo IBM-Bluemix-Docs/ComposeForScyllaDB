@@ -14,7 +14,9 @@ lastupdated: "2018-02-06"
 # 証明書の使用
 {: #using-certificates}
 
-一部のアプリケーション (特に `cqlsh` などの Python ベースのアプリケーション) は、CA 署名証明書の使用方法を認識していません。このようなアプリケーションには、`.pem` ファイルとして保存される Let's Encrypt のルート証明書が必要です。必要な 2 つのファイルは [https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt) および [https://www.identrust.com/certificates/trustid/root-download-x3.html](https://www.identrust.com/certificates/trustid/root-download-x3.html) にあります。ここでは、使いやすいように 2 つのファイルをつなげていますが、セキュリティー上、自分でダウンロードして 1 つのファイルにまとめることをお勧めします。
+一部のアプリケーション (`cqlsh` のような Python ベースのアプリケーションなど) は、CA を基盤とした証明書を使用できません。 このようなアプリケーションには、`.pem` ファイルとして保存される Let's Encrypt のルート証明書が必要です。
+
+必要な 2 つのファイルが [https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt) および [https://www.identrust.com/certificates/trustid/root-download-x3.html](https://www.identrust.com/certificates/trustid/root-download-x3.html) にあります。 これらのファイルは、使いやすいようにここで連結されていますが、セキュリティーの側面を考慮して、リンクを使用して自分でダウンロードし、1 つのファイルに連結することができます。
 
 ```
 -----BEGIN CERTIFICATE-----

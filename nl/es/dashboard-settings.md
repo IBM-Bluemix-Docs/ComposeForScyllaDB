@@ -5,17 +5,9 @@ Copyright:
 lastupdated: "2017-12-11"
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-
 # Valores
 
-Estas características le permiten adaptar el servicio {{site.data.keyword.composeForScyllaDB_full}} para que se ajuste mejor a sus necesidades y requisitos.
-
+Utilice el {{site.data.keyword.composeForScyllaDB_full}} para adaptar el servicio para que se adapte mejor a sus necesidades y requisitos.
 
 ## Versión de actualización
 

@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2017,2018
-lastupdated: "2017-12-11"
+lastupdated: "2018-05-07"
 ---
 
 {:new_window: target="_blank"}
@@ -25,7 +25,7 @@ Die Anzeige _Bereitstellungsdetails_ enthält Details zu Ihrem Service.
 
 Der Datenbanktyp, der vom Service angeboten wird, und die Datenbankversion, die Ihr Service verwendet. Wenn eine neuere Datenbankversion verfügbar ist, wird eine Benachrichtigung zusammen mit einem Link zum Abschnitt [Upgradeversion](/docs/services/ComposeForScyllaDB/dashboard-settings.html#upgrade-version) Ihres Service-Dashboards angezeigt.
 
-### Name
+### ID
 
 Eine interne ID für den Service.
 
@@ -47,7 +47,7 @@ Eine per URI formatierte Verbindungszeichenfolge kann von bestimmten Clientbibli
 
 ### Befehlszeile
 
-Die **Befehlszeile** ist ein vorformatierter Befehl, der `cqlsh` mit den korrekten Parametern aufruft. Der angezeigte Befehl enthält die erforderlichen Flags (`--ssl` und `--cqlversion`).  Um ihn verwenden zu können, müssen die PostgreSQL-Client-Tools auf dem lokalen System installiert sein. Informationen dazu, wie Sie dazu vorgehen müssen, finden Sie im Abschnitt [Externe Anwendung verbinden](./connecting-external.html).
+Die **Befehlszeile** ist ein vorformatierter Befehl, der `cqlsh` mit den korrekten Parametern aufruft. Der angezeigte Befehl enthält die erforderlichen Flags (`--ssl` und `--cqlversion`).  Um ihn verwenden zu können, müssen Sie die PostgreSQL-Client-Tools auf dem lokalen System installieren. Informationen dazu, wie Sie dazu vorgehen müssen, finden Sie im Abschnitt [Externe Anwendung verbinden](./connecting-external.html).
 
 ### Zuordnungen
 Diese Adressumsetzungszuordnungen können in Anwendungen verwendet werden, die eine hohe Verfügbarkeit erfordern, und können Knoten mithilfe der automatischen Erkennung im Cluster auffinden. Sie setzen die externen Portaladressen für Clienttreiber, die diese Funktion verwenden, in die internen Clusteradressen um.

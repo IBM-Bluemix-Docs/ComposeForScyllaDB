@@ -24,7 +24,7 @@ disponibilidade e redundância, além de backups automatizados.
 
 Escolha um nome do serviço e uma região, organização e espaço no qual provisionar o serviço. É possível usar o campo **Selecionar uma versão do banco de dados** para escolher nas versões do banco de dados disponíveis.
 
-Quando você provisiona sua instância do {{site.data.keyword.composeForScyllaDB}}, é possível escolher os planos *Padrão* ou *Corporativo*. Com o plano *Corporativo*, é possível provisionar sua instância do {{site.data.keyword.composeForScyllaDB}} em um cluster disponível do {{site.data.keyword.composeEnterprise}}. O {{site.data.keyword.composeEnterprise}} fornece a segurança e o isolamento requeridos pela conformidade corporativa e usa rede dedicada para assegurar o desempenho dos bancos de dados implementados. Veja a [Documentação do Compose Enterprise](../ComposeEnterprise/index.html) para obter mais detalhes.
+Quando você provisiona sua instância do {{site.data.keyword.composeForScyllaDB}}, é possível escolher os planos *Padrão* ou *Corporativo*. Com o plano *Corporativo*, é possível provisionar sua instância do {{site.data.keyword.composeForScyllaDB}} em um cluster disponível do {{site.data.keyword.composeEnterprise}}. O {{site.data.keyword.composeEnterprise}} fornece a segurança e o isolamento requeridos pela conformidade corporativa e usa rede dedicada para assegurar o desempenho dos bancos de dados implementados. Consulte a  [ documentação do {{site.data.keyword.composeEnterprise}}  ](/docs/services/ComposeEnterprise/index.html)  para obter mais detalhes.
 
 ## Gerenciando {{site.data.keyword.composeForScyllaDB}}
 
@@ -36,7 +36,7 @@ Quando você provisiona sua instância do {{site.data.keyword.composeForScyllaDB
 
 Para obter mais informações, veja [Configurações](./dashboard-settings.html).
 
-O {{site.data.keyword.composeForScyllaDB}} depende de funções do Cloud Foundry para gerenciar o acesso ao serviço. Somente usuários com a função de Desenvolvedor podem ver ou usar o painel de serviço. Para obter mais informações sobre as funções do Cloud Foundry, veja as páginas [Acesso ao Cloud Foundry](https://console.bluemix.net/docs/iam/cfaccess.html#cfaccess) e [Gerenciando ao acesso ao Cloud Foundry](https://console.bluemix.net/docs/iam/mngcf.html#mngcf).
+O {{site.data.keyword.composeForScyllaDB}} depende de funções do Cloud Foundry para gerenciar o acesso ao serviço. Somente usuários com a função de Desenvolvedor podem ver ou usar o painel de serviço. Para obter mais informações sobre as funções do Cloud Foundry, veja as páginas [Acesso ao Cloud Foundry](https://console.{DomainName}/docs/iam/cfaccess.html#cfaccess) e [Gerenciando ao acesso ao Cloud Foundry](https://console.{DomainName}/docs/iam/mngcf.html#mngcf).
 {: .tip}
 
 ## Conectando-se ao {{site.data.keyword.composeForScyllaDB}}

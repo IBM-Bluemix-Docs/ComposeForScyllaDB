@@ -63,7 +63,7 @@ cluster.close()
 @Grab('com.datastax.cassandra:cassandra-driver-core:3.1.0')
 ```
 
-在完成所有匯入之後，我們會使用 `Cluster.builder()` 來建置配置。只會使用其中一個 `ContactPoint` 來連接。從該連線中探索叢集中的其他節點。如果在 `connect` 上無法與 `ContactPoint` 聯繫，則會使用另一個，這就是我們新增這三個的原因。
+在完成所有匯入之後，我們會使用 `Cluster.builder()` 來建置配置。只會使用其中一個 `ContactPoint` 來連接。從該連線中探索叢集中的其他節點。如果在 `connect` 上無法與 `ContactPoint` 聯繫，則會使用另一個，這也是我們新增全部三個的原因。
 
 `PreparedStatement` 可能很熟悉，因為它們類似於其他相同名稱的資料庫特性。陳述式會進行剖析並保留在伺服器上，以便可以一再地使用。下列對 `bind` 和 `execute` 的呼叫會將資料移入並傳送至伺服器，以進行實際執行。儘管有更簡單的方法可進行一次性執行，但強調這類有用特性卻是很好的作法。
 
@@ -78,7 +78,7 @@ cluster.close()
 pip install cassandra-driver
 ```
 
-這會使用 Python 套件管理程式 `pip` 取得驅動程式。驅動程式預期有在啟用 TLS/SSL 時使用的憑證，而搭配使用憑證與服務的指示位於[使用 LE 憑證](./scylla-certificates.html)頁面上。驅動程式所需的所有其他資訊都位於服務_概觀_ 的_連線字串_ 中。
+這會使用 Python 套件管理程式 `pip` 取得驅動程式。啟用 TLS/SSL 時，驅動程式預期會有憑證可使用，而搭配使用憑證與服務的指示位於[使用 LE 憑證](./scylla-certificates.html)頁面上。驅動程式所需的所有其他資訊都位於服務_概觀_ 的_連線字串_ 中。
 
 下列的執行方式與準備陳述式並執行插入的 Java 程式碼非常類似：
 

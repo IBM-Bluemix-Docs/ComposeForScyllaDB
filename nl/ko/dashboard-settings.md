@@ -5,17 +5,9 @@ Copyright:
 lastupdated: "2017-12-11"
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-
 # 설정
 
-이러한 기능을 사용하여 필요와 요구사항에 가장 적합하도록 {{site.data.keyword.composeForScyllaDB_full}} 서비스를 조정할 수 있습니다.
-
+{{site.data.keyword.composeForScyllaDB_full}}를 사용하여 필요와 요구사항에 더 적합하게 서비스를 조정하십시오.
 
 ## 버전 업그레이드
 

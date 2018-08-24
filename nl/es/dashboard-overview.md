@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2017,2018
-lastupdated: "2017-12-11"
+lastupdated: "2018-05-07"
 ---
 
 {:new_window: target="_blank"}
@@ -25,7 +25,7 @@ El panel _Detalles de despliegue_ muestra detalles del servicio.
 
 El tipo de base de datos que ofrece el servicio y la versión de la base de datos que utiliza el servicio. Si hay disponible una versión de base de datos más reciente, se mostrará una notificación, junto con un enlace a la sección [Actualizar versión](/docs/services/ComposeForScyllaDB/dashboard-settings.html#upgrade-version) del panel de control de servicio.
 
-### Nombre
+### ID
 
 Un identificador interno para el servicio.
 
@@ -47,7 +47,7 @@ Algunas bibliotecas de cliente pueden utilizar una serie de conexión con format
 
 ### Línea de mandatos
 
-La **línea de mandatos** es un mandato preformateado que invocará `cqlsh` con los parámetros correctos. El mandato visualizado incluye los distintivos necesarios (`--ssl` y `--cqlversion`).  Para poderla utilizar, deberá tener las herramientas de cliente de PostgreSQL instaladas en el sistema local. Encontrará información sobre cómo hacerlo en el apartado [Conexión de una aplicación externa](./connecting-external.html).
+La **línea de mandatos** es un mandato preformateado que invoca `cqlsh` con los parámetros correctos. El mandato visualizado incluye los distintivos necesarios (`--ssl` y `--cqlversion`).  Para poderla utilizar, debe instalar las herramientas de cliente de PostgreSQL en el sistema local. Encontrará información sobre cómo hacerlo en el apartado [Conexión de una aplicación externa](./connecting-external.html).
 
 ### Correlaciones
 Estas correlaciones de conversión de direcciones se pueden utilizar en aplicaciones que requieren alta disponibilidad y pueden utilizar el descubrimiento automático para buscar nodos en el clúster. Convierten las direcciones del portal externo en direcciones del clúster interno para los controladores de cliente que utilizan esta característica.

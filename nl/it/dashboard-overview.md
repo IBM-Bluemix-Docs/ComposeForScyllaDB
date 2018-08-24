@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2017,2018
-lastupdated: "2017-12-11"
+lastupdated: "2018-05-07"
 ---
 
 {:new_window: target="_blank"}
@@ -25,7 +25,7 @@ Il pannello _Deployment Details_ mostra i dettagli del tuo servizio.
 
 Il tipo di database offerto dal servizio e la versione che il servizio utilizza. Se è disponibile una versione più recente del database, viene visualizzata una notifica, insieme a un link alla sezione [Aggiorna versione](/docs/services/ComposeForScyllaDB/dashboard-settings.html#upgrade-version) del tuo dashboard del servizio.
 
-### Name
+### ID
 
 Un identificativo interno per il servizio.
 
@@ -47,7 +47,7 @@ Una stringa di connessione formattata URI che può essere utilizzata da alcune l
 
 ### Riga di comando
 
-La **Riga di comando** è un comando pre-formattato che richiamerà `cqlsh` con i parametri corretti. Il comando visualizzato include gli indicatori obbligatori (`--ssl` e `--cqlversion`).  Per utilizzarla, dovrai aver installato gli strumenti client PostgreSQL nel sistema locale. Puoi trovare ulteriori informazioni su come farlo in [Connessione a un'applicazione esterna](./connecting-external.html).
+La **Riga di comando** è un comando pre-formattato che richiama `cqlsh` con i parametri corretti. Il comando visualizzato include gli indicatori obbligatori (`--ssl` e `--cqlversion`).  Per utilizzarla, devi aver installato gli strumenti client PostgreSQL nel sistema locale. Puoi trovare ulteriori informazioni su come farlo in [Connessione a un'applicazione esterna](./connecting-external.html).
 
 ### Associazioni
 Queste associazioni di traduzione dell'indirizzo possono essere utilizzate nelle applicazioni che richiedono l'elevata disponibilità e il rilevamento automatico per trovare i nodi nel cluster. Traducono gli indirizzi del portale esterni in interni per i driver del client che utilizzano questa funzione.

@@ -14,7 +14,9 @@ lastupdated: "2018-02-06"
 # Zertifikate verwenden
 {: #using-certificates}
 
-Einige Anwendungen, insbesondere auf Python basierende Anwendungen wie `cqlsh` können keine CA-gestützten Zertifikate handhaben. Für diese Anwendungen benötigen Sie Stammzertifikate von 'Let's Encrypt', die als Datei mit der Erweiterung `.pem` gespeichert werden. Die beiden erforderlichen Dateien finden Sie unter [https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt) und [https://www.identrust.com/certificates/trustid/root-download-x3.html](https://www.identrust.com/certificates/trustid/root-download-x3.html). Wir haben diese Dateien hier für Sie bereitgestellt, empfehlen aus Sicherheitsgründen jedoch, dass Sie die Dateien selbst herunterladen und in einer Datei speichern. 
+Manche Anwendungen, etwa auf Python basierende Anwendungen wie `cqlsh`, sind nicht in der Lage, CD-gestützte Zertifikate zu verwenden. Für diese Anwendungen benötigen Sie die als Datei mit der Erweiterung `.pem` gespeicherten Stammzertifikate von Let's Encrypt.
+
+Sie finden die beiden erforderlichen Dateien unter [https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt) und [https://www.identrust.com/certificates/trustid/root-download-x3.html](https://www.identrust.com/certificates/trustid/root-download-x3.html). Zur Steigerung der Benutzerfreundlichkeit sind diese Dateien hier miteinander verkettet, doch wenn Sie ein höheres Maß an Sicherheit wünschen, können Sie die Dateien über die bereitgestellten Links selbst herunterladen und in einer Datei verketten.
 
 ```
 -----BEGIN CERTIFICATE-----

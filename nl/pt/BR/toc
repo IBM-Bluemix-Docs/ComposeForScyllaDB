@@ -1,18 +1,18 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="compose-for-scylladb" audience="service" href="/docs/services/ComposeForScyllaDB/index.html"}
+{: .toc subcollection="compose-for-scylladb" audience="service" arm="3663080" href="/docs/services/ComposeForScyllaDB/index.html"}
 Compose For ScyllaDB
 
 	{: .navgroup id="learn"}
-	index.md
-	getting_started.md
+	index.md 	
+	getting_started.md 	
 	pricing.md
 
 	{: .topicgroup}
-	O Painel de serviço
-		dashboard-overview.md
-		dashboard-backups.md
+	O Painel de serviço   		
+		dashboard-overview.md 		
+		dashboard-backups.md 		
 		dashboard-settings.md
 	{: .navgroup-end}
 
@@ -25,4 +25,11 @@ Compose For ScyllaDB
 	Conectando-se ao Compose for Scylla
 		connecting-bluemix-app.md
 		connecting-external.md
+	{: .navgroup-end}
+
+	{: .navgroup id="reference"}
+	reference-versions.md 	
+	reference-architecture.md 	
+	reference-connections.md 	
+	reference-other-offerings.md
 	{: .navgroup-end}

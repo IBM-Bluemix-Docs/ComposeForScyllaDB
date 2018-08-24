@@ -5,17 +5,9 @@ Copyright:
 lastupdated: "2017-12-11"
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-
 # 設定
 
-これらの機能を使用すると、ユーザーのニーズと条件により適合するように {{site.data.keyword.composeForScyllaDB_full}} サービスを調整できます。
-
+{{site.data.keyword.composeForScyllaDB_full}} を使用して、ニーズと要件にいっそう合ったサービスを実現することができます。
 
 ## バージョンのアップグレード
 

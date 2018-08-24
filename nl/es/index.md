@@ -23,7 +23,7 @@ Puede crear un servicio de {{site.data.keyword.composeForScyllaDB}} desde la [p�
 
 Elija un nombre de servicio, y una región, organización y espacio en los que suministrar el servicio. Puede utilizar el campo **Seleccionar una versión de base de datos** para elegir entre las versiones de bases de datos disponibles.
 
-Cuando suministre la instancia de {{site.data.keyword.composeForScyllaDB}}, puede elegir los planes *Estándar* o *Empresa*. Con el plan *Empresa*, puede suministrar la instancia de {{site.data.keyword.composeForScyllaDB}} en un clúster disponible de {{site.data.keyword.composeEnterprise}}. {{site.data.keyword.composeEnterprise}} proporciona la seguridad y nivel de aislamiento necesarios para el cumplimiento de las reglas empresariales y utiliza redes dedicadas para garantizar el rendimiento de las bases de datos desplegadas. Consulte la [documentación de Compose Enterprise](../ComposeEnterprise/index.html) para ver más detalles.
+Cuando suministre la instancia de {{site.data.keyword.composeForScyllaDB}}, puede elegir los planes *Estándar* o *Empresa*. Con el plan *Empresa*, puede suministrar la instancia de {{site.data.keyword.composeForScyllaDB}} en un clúster disponible de {{site.data.keyword.composeEnterprise}}. {{site.data.keyword.composeEnterprise}} proporciona la seguridad y nivel de aislamiento necesarios para el cumplimiento de las reglas empresariales y utiliza redes dedicadas para garantizar el rendimiento de las bases de datos desplegadas. Consulte la [documentación de {{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise/index.html) para obtener más detalles.
 
 ## Gestión de {{site.data.keyword.composeForScyllaDB}}
 
@@ -35,7 +35,7 @@ Puede gestionar el servicio desde el panel de control del servicio. Aquí encont
 
 Para obtener más información, consulte [Valores](./dashboard-settings.html).
 
-{{site.data.keyword.composeForScyllaDB}} utiliza roles de Cloud Foundry para gestionar el acceso al servicio. Solo los usuarios con el rol de desarrollador pueden ver o utilizar el panel de control del servicio. Para obtener más información sobre los roles de Cloud Foundry, consulte las páginas [Acceso de Cloud Foundry](https://console.bluemix.net/docs/iam/cfaccess.html#cfaccess) y [Gestión del acceso de Cloud Foundry](https://console.bluemix.net/docs/iam/mngcf.html#mngcf).
+{{site.data.keyword.composeForScyllaDB}} utiliza roles de Cloud Foundry para gestionar el acceso al servicio. Solo los usuarios con el rol de desarrollador pueden ver o utilizar el panel de control del servicio. Para obtener más información sobre los roles de Cloud Foundry, consulte las páginas [Acceso de Cloud Foundry](https://console.{DomainName}/docs/iam/cfaccess.html#cfaccess) y [Gestión del acceso de Cloud Foundry](https://console.{DomainName}/docs/iam/mngcf.html#mngcf).
 {: .tip}
 
 ## Conexión a {{site.data.keyword.composeForScyllaDB}}

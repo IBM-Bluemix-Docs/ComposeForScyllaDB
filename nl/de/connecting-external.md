@@ -72,7 +72,7 @@ Kehren Sie zu Ihrem Befehl `cqlsh` zurück, um zu beweisen, dass das Script funk
 
 ## Verbindung über Python herstellen
 
-Verwenden Sie den [DataStax Python-Treiber](https://github.com/datastax/python-driver), um eine Verbindung zu Ihrer Python-Anwendung herzustellen. Die Installation kann über pip erfolgen: 
+Verwenden Sie den [DataStax Python-Treiber](https://github.com/datastax/python-driver), um eine Verbindung zu Ihrer Python-Anwendung herzustellen. Die Installation kann über pip erfolgen:
 
 ```shell
 pip install cassandra-driver

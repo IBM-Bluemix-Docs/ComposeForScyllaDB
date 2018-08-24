@@ -5,17 +5,9 @@ Copyright:
 lastupdated: "2017-12-11"
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-
 # 设置
 
-通过这些功能，您可以调整 {{site.data.keyword.composeForScyllaDB_full}} 服务，以更满足您的需要和需求。
-
+使用 {{site.data.keyword.composeForScyllaDB_full}} 可调整服务，以更好地满足您的需要和需求。
 
 ## 升级版本
 
@@ -59,8 +51,7 @@ lastupdated: "2017-12-11"
 白名单条目会自动添加到 Compose 的服务器，以允许它们进行连接。
 
 ### 除去
-要从白名单中除去 IP 地址或网络掩码，请单击旁边显示的*除去*条目。
-除去白名单上的所有条目后，将禁用白名单，并且 TCP 访问门户网站将接受所有 IP 地址。
+要从白名单中除去 IP 地址或网络掩码，请单击旁边显示的*除去*条目。除去白名单上的所有条目后，将禁用白名单，并且 TCP 访问门户网站将接受所有 IP 地址。
 
 
 ## SSH 密钥
