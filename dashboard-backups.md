@@ -24,7 +24,7 @@ Monthly|Monthly backups are available for 3 months
 On-demand|One on-demand backup is available. The available backup is always the most recent on-demand backup.
 {: caption="Table 1. Backup retention schedule" caption-side="top"}
 
-Backup schedules and retention policies are fixed. If you need to keep more backups than the retention schedule allows, you must download backups and retain archives according to your business requirements.
+Backup schedules and retention policies are fixed. If you need to keep more backups than the retention schedule allows, you must download backups and keep archives according to your business requirements.
 
 ## Viewing existing backups
 
@@ -61,17 +61,19 @@ To restore a backup to a new service instance:
 2. Click in the corresponding row to expand the options for the backup you want to download.
 3. Click **Restore**. A message is displayed that a restore has been initiated. The new service instance is automatically named "scylla-restore-[timestamp]", and appears on your dashboard when provisioning starts.
 
-### Restoring via the {{site.data.keyword.cloud_notm}} CLI
+### Restoring by using the {{site.data.keyword.cloud_notm}} CLI
 
 Use the following steps to use the {{site.data.keyword.cloud_notm}} CLI to restore a backup from a running Scylla service to a new Scylla service.
 
 1. If you need to, [download and install the CLI](https://console.{DomainName}/docs/cli/index.html#overview). 
 2. Find the backup that you want to restore from on the _Backups_ page on your service and copy the backup ID.  
   **Or**  
-  Use the `GET /2016-07/deployments/:id/backups` to find a backup and its ID through the Compose API. The Foundation Endpoint and the service instance ID are both shown in the service's _Overview_. For example: 
+  Use the `GET /2016-07/deployments/:id/backups` to find a backup and its ID through the Compose API. The Foundation Endpoint and the service instance ID are both shown in the service's _Overview_.
+  
   ``` 
   https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INSTANCE_ID/deployments/$DEPLOYMENT_ID/backups
   ```  
+  
   The response contains a list of all available backups for that service instance. Pick the backup that you want to restore from and copy its ID.
 
 3. Log in with the appropriate account and credentials. Use `ibmcloud login`, or use `ibmcloud login -help` to see all the login options.
@@ -82,8 +84,9 @@ Use the following steps to use the {{site.data.keyword.cloud_notm}} CLI to resto
   ibmcloud target -o "$YOUR_ORG" -s "YOUR_SPACE"
   ```
 
-5. Use the `service create` command to provision a new service, and provide the source service and the specific backup that you are restoring in a JSON object. For example:
-  ``` 
+5. Use the `service create` command to provision a new service, and provide the source service and the specific backup that you are restoring in a JSON object.
+
+  ```
   ibmcloud service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": "$BACKUP_ID" }'
   ```
 
@@ -108,8 +111,8 @@ Some major version upgrades are not available in the current running deployment.
 ibmcloud service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": ""$BACKUP_ID", "db_version":"$VERSION_NUMBER" }'
 ```
 
-For example, use the following example to restore an older version of a {{site.data.keyword.composeForScyllaDB}} service to a new service running Scylla 2.0.3.
+For example, use the following example to restore an older version of a {{site.data.keyword.composeForScyllaDB}} service to a new service that is running Scylla 2.0.3.
 
 ```
-ibmcloud service create compose-for-scylladb Standard migrated_scylla -c '{ "source_service_instance_id": "0269e284-dcac-4618-89a7-f79e3f1cea6a", "backup_id":"5a96d8a7e16c090018884566", "db_version":"2.0.3"  }'
-
+ibmcloud service create compose-for-scylladb Standard migrated_scylla -c '{ "source_service_instance_id": "0269e284-dcac-4618-89a7-f79e3f1cea6a", "backup_id":"5a96d8a7e16c090018884566", "db_version":"2.0.3"  }
+```

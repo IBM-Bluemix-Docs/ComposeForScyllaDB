@@ -43,7 +43,7 @@ You can find each Connection String for your service in a different tab in the _
 
 ### HTTPS
 
-A URI-formatted connection string that can be used by some client libraries and contains all the information that is needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](./connecting-external.html).
+A URI-formatted connection string that can be used by some client libraries, and which contains all the information that is needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](./connecting-external.html).
 
 ### Command Line
 
@@ -53,7 +53,7 @@ The **Command Line** is a preformatted command that invokes `cqlsh` with the cor
 These address translation maps can be used in applications that require high-availability and can use auto-discovery to find nodes in the cluster. They translate the external portal addresses to the internal cluster addresses for client drivers that use this feature.
 
 ### Socks and Nodetool
-In order to enable nodetool administration of Scylla, the service comes with an SSH capsule configured as a SOCKS proxy. You need to add an SSH key to your deployment in order to use the proxy. You can find out more in [Using Nodetool](./scylla-nodetool.html).
+To enable nodetool administration of Scylla, the service comes with an SSH capsule configured as a SOCKS proxy. You need to add an SSH key to your deployment to use the proxy. You can find out more in [Using Nodetool](./scylla-nodetool.html).
 
 
 ## Instance Administration API
@@ -62,7 +62,7 @@ You can manage your {{site.data.keyword.composeForScyllaDB}} service through the
 
 ### Foundation Endpoint
 
-The foundation endpoint is composed of the region the service resides in and the service instance ID. It is at the start of every endpoint.
+The foundation endpoint is composed of the region the service is deployed in and the service instance ID. It is at the start of every endpoint.
 
 ### Deployment ID
 

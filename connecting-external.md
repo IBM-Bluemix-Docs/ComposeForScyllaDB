@@ -20,7 +20,7 @@ You can find the information that you need to connect to {{site.data.keyword.com
 
 One of the most advanced drivers for Cassandra is the Java driver, which makes sense given that Cassandra is written in Java.
 
-The example that is given here is a [Groovy](http://www.groovy-lang.org/documentation.html#gettingstarted) script. If you're happy to use just about any JVM language, converting from Groovy to your language of choice should be relatively straightforward:
+The example that follows is a [Groovy](http://www.groovy-lang.org/documentation.html#gettingstarted) script. If you're happy to use just about any JVM language, converting from Groovy to your language of choice is relatively straightforward:
 
 ```java
 @Grab('com.datastax.cassandra:cassandra-driver-core:3.1.0')
@@ -67,7 +67,7 @@ To get started, pull in the latest Cassandra driver.
 
 After all of the imports, we use a `Cluster.builder()` to build up the configuration. Only one of the `ContactPoint`s is used to connect. From that connection, the other nodes in the cluster are discovered. If that `ContactPoint` is unreachable on `connect`, then another is used, which is why we add all three.
 
-You might be familiar with `PreparedStatement`s, since they are analogous to features of the same name that are offered by other databases. The statement is parsed, and held at the server ready to be used and reused. The following calls to `bind` and `execute` populate and send the data to the server for execution. While there are simpler methods for one-off execution, this is a useful feature to be aware of.
+You might be familiar with `PreparedStatement`, since it's analogous to features of the same name that are offered by other databases. The statement is parsed, and held at the server ready to be used and reused. The calls to `bind` and `execute` populate and send the data to the server for execution. Simpler methods for one-off execution are available, but this is a useful feature to be aware of.
 
 To prove that the script works, go back to your `cqlsh` and query the table.
 
@@ -81,9 +81,9 @@ To connect your python application, use the [DataStax Python Driver](https://git
 pip install cassandra-driver
 ```
 
-The driver expects to use a certificate when TLS/SSL is enabled. You can find instructions for using a certificate with your service on the [Using Certificates](./scylla-certificates.html) page. All the other information the driver needs is in the _Connection Strings_ of the service _Overview_.
+The driver expects to use a certificate when TLS/SSL is enabled. You can find instructions for using a certificate with your service on the [Using Certificates](./scylla-certificates.html) page. All the other information that the driver needs can be found in the _Connection Strings_ of the service _Overview_.
 
-The example code performs similarly to the Java code, by preparing a statement and executing an insert:
+The example code performs similarly to the Java code, by preparing a statement and executing an insert.
 
 ```python
 import ssl

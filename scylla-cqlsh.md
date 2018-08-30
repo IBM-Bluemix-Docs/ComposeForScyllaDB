@@ -39,11 +39,11 @@ When the `cqlsh` command runs, it loads `$HOME/.cassandra/cqlshrc` by default, w
 
 If you are running multiple instances of Scylla in different environments, you can create a separate `cqlshrc` file and use it by adding `--cqlshrc=[filename]` to your command.
 
-For an example of a full cqlshrc file, see the [Apache sample of cqlshrc](https://github.com/apache/cassandra/blob/trunk/conf/cqlshrc.sample). 
+For an example of a full `cqlshrc` file, see the [Apache sample of cqlshrc](https://github.com/apache/cassandra/blob/trunk/conf/cqlshrc.sample). 
 
-### cqlshrc for {{site.data.keyword.composeForScyllaDB}}
+### Connecting to {{site.data.keyword.composeForScyllaDB}}
 
-A minimal `cqlshrc` file for connecting to your service looks like this:
+The following code shows a minimal `cqlshrc` file for connecting to your service.
 
 ```
 [authentication]
@@ -73,9 +73,9 @@ You can also set the version specifically to TLSv1.2 by using `export SSL_VERSIO
 
 ## Connecting Without Validating
 
-Validation is enabled by default, but you can connect to Scylla with TLS/SSL without validating the remote host. However, this is not recommended for production systems, . Validation is controlled by the environment variable `SSL_VALIDATE`, or by SSL settings in the cqlshrc file. Set `SSL_VALIDATE` to false (`export SSL_VALIDATE=false`) in your environment to disable validation.
+Validation is enabled by default, but you can connect to Scylla with TLS/SSL without validating the remote host. However, this is not recommended for production systems. Validation is controlled by the environment variable `SSL_VALIDATE`, or by SSL settings in the `cqlshrc` file. Set `SSL_VALIDATE` to false (`export SSL_VALIDATE=false`) in your environment to disable validation.
 
-Alternatively, you can edit your cqlshrc file to disable validation.
+Alternatively, you can edit your `cqlshrc` file to disable validation.
 
 ```
 [ssl]  
@@ -92,11 +92,11 @@ SSL_VERSION=SSLv23 SSL_VALIDATE=false cqlsh --ssl portal1204-7.sally-scylla.comp
 
 ## Obtaining and Using the Certificate
 
-If you want to use cqlsh and verify the remote host, you need to obtain the certificate, save it somewhere accessible, and then provide the path to the certificate to cqlsh.
+If you want to use `cqlsh` and verify the remote host, you need to obtain the certificate, save it somewhere accessible, and then provide the path to the certificate to `cqlsh`.
 
 Set the environment variable  `SSL_CERTFILE` to the path and file name of your saved certificate to enable it for all subsequent invocations of `cqlsh`. 
 
-Alternatively, you can add the following to your cqlshrc file.
+Alternatively, you can add the following to your `cqlshrc` file.
 
 ```
 [ssl]
@@ -104,21 +104,21 @@ certfile = ~/path_to_your/lechain.pem
 validate = true
 ```
 
-If you want to use a certificate for a single `cqlsh` command place `SSL_CERTFILE = ~/path_to_your/lechain.pem` at the start of your cqlsh connection command. For example:
+If you want to use a certificate for a single `cqlsh` command place `SSL_CERTFILE = ~/path_to_your/lechain.pem` at the start of your `cqlsh` connection command.
 
 ```
 SSL_VERSION=SSLv23 SSL_CERTFILE='~/path_to_your/lechain.pem' cqlsh --ssl portal1204-7.sally-scylla.composedb.com 24981 -u scylla -p [password] --cqlversion=3.3.1
 ```
 
-## Getting started with cqlsh
+## Getting started with CQL commands
 
-If you type `HELP` you can see that the shell has a lot of capability. All of the commands even have `TAB` completion too. For example:
+If you type `HELP`, you can see that the shell has a lot of capability. All of the commands even have `TAB` completion too. Complete the following steps to see this feature in action.
 
 1. Type `CREATE KEYSPACE my_new_keyspace <TAB><TAB><TAB>`. You should see the choices for the replication class.
 2. Choose `SimpleStrategy` here because the cluster won't be spanning multiple data centers.
 3. Press `<TAB><TAB>` again and enter 3 for the `replication_factor` value. Then, close the brace with `}` and finish the statement with `;<enter>`.
 
-You have created your first KEYSPACE and defaulted it to replicating your data to all three nodes in your cluster.
+You have created your first `KEYSPACE` and defaulted it to replicating your data to all three nodes in your cluster.
 
 ```sql
 scylla@cqlsh> CREATE KEYSPACE example_keyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };
@@ -132,7 +132,7 @@ scylla@cqlsh:example_keyspace> create table names (
 scylla@cqlsh:example_keyspace> 
 ```
 
-Now you can use the key space:
+Now you can use the keyspace:
 
 ```sql 
 USE my_new_keyspace;

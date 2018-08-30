@@ -37,4 +37,4 @@ Field Name|Description
 `uri`|The URI that is used when connecting to the service, which includes the schema (`scylla:`), password, host name of server, port number to connect to, and database name.
 {: caption="Table 1. Compose for ScyllaDB credentials" caption-side="top"}
 
-**Note:** Three `haproxy` portals provide access to the Scylla service. Both `uri`, `uri_direct_1`, and `uri_direct_2` can be used to connect. In your applications, switch between `uri`, `uri_direct_1`, and `uri_direct_2` to manage responses to connection failures.
+**Note:** Three `haproxy` portals provide access to the Scylla service. You can use any of `uri`, `uri_direct_1`, and `uri_direct_2` to connect. In your applications, switch between `uri`, `uri_direct_1`, and `uri_direct_2` to manage responses to connection failures.
