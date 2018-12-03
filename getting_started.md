@@ -26,7 +26,7 @@ You also need to install [Node.js](https://nodejs.org/) and [Git](https://git-sc
 ## Step 1. Create a {{site.data.keyword.composeForScyllaDB}} service instance
 {: #create-service}
 
-You can create a {{site.data.keyword.composeForScyllaDB}} service from the [{{site.data.keyword.composeForScyllaDB}} page](https://console.{DomainName}/catalog/services/compose-for-scylladb/) in the {{site.data.keyword.cloud_notm}} catalog.
+You can create a {{site.data.keyword.composeForScyllaDB}} service from the [{{site.data.keyword.composeForScyllaDB}} page](https://{DomainName}/catalog/services/compose-for-scylladb/) in the {{site.data.keyword.cloud_notm}} catalog.
 
 Choose a service name, region, organization and space to provision the service in, and for the **Select a database version** field, choose _Latest Preferred Version_.
 
@@ -63,7 +63,7 @@ Use npm to install dependencies.
 
 ## Step 4. Download and install the {{site.data.keyword.cloud_notm}} CLI tool
 
-The {{site.data.keyword.cloud_notm}} CLI tool tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For details, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
+The {{site.data.keyword.cloud_notm}} CLI tool tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For details, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
 
 ## Step 5. Connect to {{site.data.keyword.cloud_notm}}
 
@@ -73,7 +73,7 @@ The {{site.data.keyword.cloud_notm}} CLI tool tool is what you use to communicat
   ibmcloud login
   ```
 
-  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. See [Logging in with a federated ID](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id) to learn more.
+  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. See [Logging in with a federated ID](https://{DomainName}/docs/cli/login_federated_id.html#federated_id) to learn more.
   {: tip}
 
 2. Make sure that you are targeting the correct {{site.data.keyword.cloud_notm}} org and space.

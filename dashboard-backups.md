@@ -65,7 +65,7 @@ To restore a backup to a new service instance:
 
 Use the following steps to use the {{site.data.keyword.cloud_notm}} CLI to restore a backup from a running Scylla service to a new Scylla service.
 
-1. If you need to, [download and install the CLI](https://console.{DomainName}/docs/cli/index.html#overview). 
+1. If you need to, [download and install the CLI](https://{DomainName}/docs/cli/index.html#overview). 
 2. Find the backup that you want to restore from on the _Backups_ page on your service and copy the backup ID.  
   **Or**  
   Use the `GET /2016-07/deployments/:id/backups` to find a backup and its ID through the Compose API. The Foundation Endpoint and the service instance ID are both shown in the service's _Overview_.

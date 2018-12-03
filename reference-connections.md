@@ -28,7 +28,7 @@ Unless you're working with a driver that completely handles failover errors, you
 
 ## Encryption in Transit
 
-All {{site.data.keyword.composeForScyllaDB}} HAProxy portals are TLS/SSL-enabled and support TLS version 1.2. The certificates for the service are Let's Encrypt certificates. Some drivers, and the command line interface, `cqlsh`, need a copy of the certificate chain to connect to your service. For more information, see [Using Certificates](https://console.{DomainName}/docs/services/ComposeForScyllaDB/scylla-certificates.html)
+All {{site.data.keyword.composeForScyllaDB}} HAProxy portals are TLS/SSL-enabled and support TLS version 1.2. The certificates for the service are Let's Encrypt certificates. Some drivers, and the command line interface, `cqlsh`, need a copy of the certificate chain to connect to your service. For more information, see [Using Certificates](https://{DomainName}/docs/services/ComposeForScyllaDB/scylla-certificates.html)
 
 ## Connection Limits
 
