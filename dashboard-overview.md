@@ -12,6 +12,7 @@ lastupdated: "2018-05-07"
 {:pre: .pre}
 
 # Service Overview
+{: #dashboard-overview}
 
 The _Overview_ page shows you information about your {{site.data.keyword.cloud}} Compose database. The overview includes essential identifying information and current resource usage. You'll also find a section for connection strings that you can use to connect to your database.
 
@@ -23,7 +24,7 @@ The _Deployment Details_ panel shows details of your service.
 
 ### Type
 
-The type of database that is offered by the service, and the database version that your service uses. If a more recent database version is available, a notification is displayed, together with a link to the [Upgrade version](/docs/services/ComposeForScyllaDB/dashboard-settings.html#upgrade-version) section of your service dashboard.
+The type of database that is offered by the service, and the database version that your service uses. If a more recent database version is available, a notification is displayed, together with a link to the [Upgrade version](/docs/services/ComposeForScyllaDB?topic=compose-for-scylladb-dashboard-settings) section of your service dashboard.
 
 ### ID
 
@@ -43,17 +44,17 @@ You can find each Connection String for your service in a different tab in the _
 
 ### HTTPS
 
-A URI-formatted connection string that can be used by some client libraries, and which contains all the information that is needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](./connecting-external.html).
+A URI-formatted connection string that can be used by some client libraries, and which contains all the information that is needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](/docs/services/ComposeForScyllaDB?topic=compose-for-scylladb-external-app).
 
 ### Command Line
 
-The **Command Line** is a preformatted command that invokes `cqlsh` with the correct parameters. The displayed command includes the required flags (`--ssl` and `--cqlversion`). To use it, you need to install the PostgreSQL client tools on the local system. For more information, see [Connecting an external application](./connecting-external.html).
+The **Command Line** is a preformatted command that invokes `cqlsh` with the correct parameters. The displayed command includes the required flags (`--ssl` and `--cqlversion`). To use it, you need to install the PostgreSQL client tools on the local system. For more information, see [Connecting an external application](/docs/services/ComposeForScyllaDB?topic=compose-for-scylladb-external-app).
 
 ### Maps
 These address translation maps can be used in applications that require high-availability and can use auto-discovery to find nodes in the cluster. They translate the external portal addresses to the internal cluster addresses for client drivers that use this feature.
 
 ### Socks and Nodetool
-To enable nodetool administration of Scylla, the service comes with an SSH capsule configured as a SOCKS proxy. You need to add an SSH key to your deployment to use the proxy. You can find out more in [Using Nodetool](./scylla-nodetool.html).
+To enable nodetool administration of Scylla, the service comes with an SSH capsule configured as a SOCKS proxy. You need to add an SSH key to your deployment to use the proxy. You can find out more in [Using Nodetool](/docs/services/ComposeForScyllaDB?topic=compose-for-scylladb-scylla-nodetool).
 
 
 ## Instance Administration API

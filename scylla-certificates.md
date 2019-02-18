@@ -12,7 +12,7 @@ lastupdated: "2018-02-06"
 {:pre: .pre}
 
 # Using Certificates
-{: #using-certificates}
+{: #scylla-certificates}
 
 Some applications - Python-based applications like `cqlsh`, for example - don't know how to use a CA-backed certificate. For these applications, you need to save the root certificate as a `.pem` file.
 

@@ -12,7 +12,7 @@ lastupdated: "2018-02-28"
 {:pre: .pre}
 
 # Connecting an external application
-{: #connecting-external-app}
+{: #external-app}
 
 You can find the information that you need to connect to {{site.data.keyword.composeForScyllaDB_full}} on the *Overview* page of your {{site.data.keyword.composeForScyllaDB}} service.
 
@@ -81,7 +81,7 @@ To connect your python application, use the [DataStax Python Driver](https://git
 pip install cassandra-driver
 ```
 
-The driver expects to use a certificate when TLS/SSL is enabled. You can find instructions for using a certificate with your service on the [Using Certificates](./scylla-certificates.html) page. All the other information that the driver needs can be found in the _Connection Strings_ of the service _Overview_.
+The driver expects to use a certificate when TLS/SSL is enabled. You can find instructions for using a certificate with your service on the [Using Certificates](/docs/services/ComposeForScyllaDB?topic=compose-for-scylladb-scylla-certificates) page. All the other information that the driver needs can be found in the _Connection Strings_ of the service _Overview_.
 
 The example code performs similarly to the Java code, by preparing a statement and executing an insert.
 

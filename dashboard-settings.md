@@ -6,6 +6,7 @@ lastupdated: "2017-12-11"
 ---
 
 # Settings
+{: #dashboard-settings}
 
 Use the {{site.data.keyword.composeForScyllaDB_full}} to adapt your service to better suit your needs and requirements.
 
@@ -20,7 +21,7 @@ If a new version of the database is available, you can select which version you 
 You can increase or reduce the amount of storage that is allocated to your service by scaling resources.
 
 1. Go to your service's _Overview_ page.
-2. In the _Deployment Details_ panel, click **Scale Resources**. The Scale Resouces page opens.
+2. In the _Deployment Details_ panel, click **Scale Resources**. The Scale Resources page opens.
 
     ![The Scale Resources page](./images/scylla-scale-show.png "The Scale Resources page")
 
@@ -63,4 +64,4 @@ Scylla services are provisioned with an SSH portal to enable nodetool administra
 
 ![SSH Keys](./images/scylla-portal-ssh-show.png "The SSH Key fields.")
 
-Information on how nodetool works with your scylla service is in [Using Nodetool](./scylla-nodetool.html).
+Information on how nodetool works with your scylla service is in [Using Nodetool](/docs/services/ComposeForScyllaDB?topic=compose-for-scylladb-scylla-nodetool).

@@ -14,6 +14,8 @@ lastupdated: "2018-05-29"
 
 
 # Getting started tutorial
+{: #getting-started}
+
 The getting started tutorial uses a [sample app](https://github.com/IBM-Cloud/compose-scylladb-helloworld-nodejs) to demonstrate how to use Node.js to connect to an {{site.data.keyword.composeForScyllaDB_full}} service by using the provided credentials. The application uses a web interface to create, read from, and write data to a database.
 {: shortdesc}
 
@@ -63,7 +65,7 @@ Use npm to install dependencies.
 
 ## Step 4. Download and install the {{site.data.keyword.cloud_notm}} CLI tool
 
-The {{site.data.keyword.cloud_notm}} CLI tool tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For details, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
+The {{site.data.keyword.cloud_notm}} CLI tool tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For details, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install_use).
 
 ## Step 5. Connect to {{site.data.keyword.cloud_notm}}
 
@@ -73,7 +75,7 @@ The {{site.data.keyword.cloud_notm}} CLI tool tool is what you use to communicat
   ibmcloud login
   ```
 
-  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. See [Logging in with a federated ID](https://{DomainName}/docs/cli/login_federated_id.html#federated_id) to learn more.
+  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/iam?topic=iam-federated_id) to learn more.
   {: tip}
 
 2. Make sure that you are targeting the correct {{site.data.keyword.cloud_notm}} org and space.
@@ -163,7 +165,7 @@ npm start
 
 The app is now running at [http://localhost:8080](http://localhost:8080). You can add words and definitions to your {{site.data.keyword.composeForScyllaDB}} database. When you stop and restart the app, any words you have already added are displayed when you refresh the page.
 
-For more information about the credentials you created for the application to connect to your service, see [Available Credentials](./connecting-bluemix-app.html#available-credentials).
+For more information about the credentials you created for the application to connect to your service, see [Available Credentials](/docs/services/ComposeForScyllaDB?topic=compose-for-scylladb-ibmcloud-cf-app).
 
 ## Next steps
 
@@ -171,9 +173,9 @@ To understand more about how the [sample app](https://github.com/IBM-Cloud/compo
 
 To start exploring your {{site.data.keyword.composeForScyllaDB}} service, see the following topics about the service dashboard:
 
-- [Dashboard Overview](./dashboard-overview.html)
-- [Backups](./dashboard-backups.html)
-- [Settings](./dashboard-settings.html)
+- [Dashboard Overview](/docs/services/ComposeForScyllaDB?topic=compose-for-scylladb-dashboard-overview)
+- [Backups](/docs/services/ComposeForScyllaDB?topic=compose-for-scylladb-dashboard-backups)
+- [Settings](/docs/services/ComposeForScyllaDB?topic=compose-for-scylladb-dashboard-settings)
 
 
 [ibm_cloud_signup_url]: https://ibm.biz/compose-for-scylladb-signup

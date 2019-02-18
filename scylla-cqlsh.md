@@ -12,7 +12,7 @@ lastupdated: "2018-05-18"
 {:pre: .pre}
 
 # Using cqlsh
-{: #using-cqlsh}
+{: #scylla-cqlsh}
 
 You can use `cqlsh` to connect directly to {{site.data.keyword.composeForScyllaDB_full}}.
 

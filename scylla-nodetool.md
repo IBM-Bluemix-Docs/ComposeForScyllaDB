@@ -12,7 +12,7 @@ lastupdated: "2017-12-11"
 {:pre: .pre}
 
 # Using nodetool
-{: #using-nodetool}
+{: #scylla-nodetool}
 
 To use nodetool to administer your {{site.data.keyword.composeForScyllaDB_full}} service, first you need to add an SSH key, then open a tunnel by using the SSH command in the _Socks_ tab of the connection strings.
 
