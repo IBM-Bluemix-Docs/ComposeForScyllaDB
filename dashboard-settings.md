@@ -3,6 +3,9 @@
 Copyright:
   years: 2017,2018
 lastupdated: "2017-12-11"
+
+subcollection: compose-for-scylladb
+
 ---
 
 # Settings

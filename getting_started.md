@@ -3,6 +3,9 @@
 copyright:
   years: 2016,2018
 lastupdated: "2018-05-29"
+
+subcollection: compose-for-scylladb
+
 ---
 
 {:shortdesc: .shortdesc}

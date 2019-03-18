@@ -3,6 +3,9 @@
 copyright:
   years: 2017,2018
 lastupdated: "2017-10-16"
+
+subcollection: compose-for-scylladb
+
 ---
 
 {:new_window: target="_blank"}
