@@ -45,6 +45,8 @@ Cluster cluster = Cluster.builder()
         new InetSocketAddress("aws-us-east-1-portal6.dblayer.com", 15400 )
     )
     .withCredentials("scylla", "XOEDTTBPZGYAZIQD")
+    .withSSL()
+    .withQueryOptions(new QueryOptions().setConsistencyLevel(ONE))
     .build()
 
 Session session = cluster.connect("my_new_keyspace")
@@ -68,7 +70,7 @@ To get started, pull in the latest Cassandra driver.
 @Grab('com.datastax.cassandra:cassandra-driver-core:3.1.0')
 ```
 
-After all of the imports, we use a `Cluster.builder()` to build up the configuration. Only one of the `ContactPoint`s is used to connect. From that connection, the other nodes in the cluster are discovered. If that `ContactPoint` is unreachable on `connect`, then another is used, which is why we add all three.
+After all of the imports, we use a `Cluster.builder()` to build up the configuration. Only one of the `ContactPoint`s is used to connect. From that connection, the other nodes in the cluster are discovered. If that `ContactPoint` is unreachable on `connect`, then another is used, which is why we add all three. Compose for ScyllaDB requires SSL connection which is enabled with the `withSSL` call. Cassandra driver uses `LOCAL_ONE` as default `Consistency Level`, since ScyllaDB machines are sometimes deployed in different racks, the `Consistency Level` should be adapted accordingly, note that `ONE` is just an example and it should be tuned according to every specific deployment and keyspace configurations. 
 
 You might be familiar with `PreparedStatement`, since it's analogous to features of the same name that are offered by other databases. The statement is parsed, and held at the server ready to be used and reused. The calls to `bind` and `execute` populate and send the data to the server for execution. Simpler methods for one-off execution are available, but this is a useful feature to be aware of.
 
