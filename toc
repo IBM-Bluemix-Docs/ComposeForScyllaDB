@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="compose-for-scylladb" audience="service" arm="3663080" href="/docs/services/ComposeForScyllaDB/index.html" path="services/ComposeForScyllaDB"}
+{: .toc subcollection="compose-for-scylladb" category="databases" audience="service" arm="3663080" href="/docs/services/ComposeForScyllaDB/index.html" path="services/ComposeForScyllaDB"}
 Compose For ScyllaDB
 
 	{: .navgroup id="learn"}
