@@ -3,6 +3,8 @@ copyright:
   years: 2016,2018
 lastupdated: "2018-06-18"
 
+keywords: scylla, compose
+
 subcollection: compose-for-scylladb
 
 ---
