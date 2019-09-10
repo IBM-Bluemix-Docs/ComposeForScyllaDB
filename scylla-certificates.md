@@ -21,7 +21,7 @@ subcollection: compose-for-scylladb
 
 Some applications - Python-based applications like `cqlsh`, for example - don't know how to use a CA-backed certificate. For these applications, you need to save the root certificate as a `.pem` file.
 
-You can find the two files you need at [https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt) and [https://www.identrust.com/certificates/trustid/root-download-x3.html](https://www.identrust.com/certificates/trustid/root-download-x3.html). The files are concatenated here for your ease of use. For better security, you can download your own using the links and concatenate them into a file.
+You can find the two files you need at [https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt) and [https://www.identrust.com/dst-root-ca-x3](https://www.identrust.com/dst-root-ca-x3). The files are concatenated here for your ease of use. For better security, you can download your own using the links and concatenate them into a file.
 
 ```
 -----BEGIN CERTIFICATE-----
