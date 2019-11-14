@@ -35,7 +35,7 @@ You can create a {{site.data.keyword.composeForScyllaDB}} service from the [{{si
 
 Choose a service name, region, organization and space to provision the service in, and for the **Select a database version** field, choose _Latest Preferred Version_.
 
-Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForScyllaDB}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation that is required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise/index.html) documentation for more details.
+Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForScyllaDB}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation that is required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise?topic=compose-enterprise-about) documentation for more details.
 
 Click **Create** to provision your service. Provisioning can take a while to complete. You can check on the progress by going to the _Manage_ view for the service.
 
@@ -68,7 +68,7 @@ Use npm to install dependencies.
 
 ## Step 4. Download and install the {{site.data.keyword.cloud_notm}} CLI tool
 
-The {{site.data.keyword.cloud_notm}} CLI tool tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For details, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install_use).
+The {{site.data.keyword.cloud_notm}} CLI tool tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For details, see [Download and install {{site.data.keyword.cloud_notm}} CLI](docs/cli/reference/ibmcloud?topic=cloud-cli-getting-started).
 
 ## Step 5. Connect to {{site.data.keyword.cloud_notm}}
 

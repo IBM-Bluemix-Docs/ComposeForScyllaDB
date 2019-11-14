@@ -28,7 +28,7 @@ You can create a {{site.data.keyword.composeForScyllaDB}} service from the [{{si
 
 Choose a service name, and a region, organization and space to provision the service in. You can use the **Select a database version** field to choose from the available database versions.
 
-When you provision your {{site.data.keyword.composeForScyllaDB}} instance you can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForScyllaDB}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}} documentation](/docs/services/ComposeEnterprise/index.html) for more details.
+When you provision your {{site.data.keyword.composeForScyllaDB}} instance you can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForScyllaDB}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}} documentation](/docs/services/ComposeEnterprise?topic=compose-enterprise-about) for more details.
 
 ## Managing {{site.data.keyword.composeForScyllaDB}}
 
