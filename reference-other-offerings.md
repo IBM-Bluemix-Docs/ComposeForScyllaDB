@@ -31,4 +31,4 @@ More useful database-related information is in the [Compose Articles](https://ww
 
 Once you have a {{site.data.keyword.composeEnterprise}} cluster, select the {{site.data.keyword.composeForScyllaDB}} service with the Enterprise plan to provision the service onto your dedicated cluster. 
 
-For more information, see the [{{site.data.keyword.composeEnterprise}} catalog page](https://{DomainName}/catalog/services/compose-enterprise), and the {{site.data.keyword.composeEnterprise}} [documentation](https://{DomainName}/docs/services/ComposeEnterprise/index.html).
+For more information, see the [{{site.data.keyword.composeEnterprise}} catalog page](https://{DomainName}/catalog/compose-enterprise), and the {{site.data.keyword.composeEnterprise}} [documentation](https://{DomainName}/docs/ComposeEnterprise/index.html).
