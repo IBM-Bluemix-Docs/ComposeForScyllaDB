@@ -4,7 +4,7 @@ copyright:
   years: 2016,2018
 lastupdated: "2018-05-29"
 
-subcollection: compose-for-scylladb
+subcollection: ComposeForScyllaDB
 
 ---
 
@@ -168,7 +168,7 @@ npm start
 
 The app is now running at [http://localhost:8080](http://localhost:8080). You can add words and definitions to your {{site.data.keyword.composeForScyllaDB}} database. When you stop and restart the app, any words you have already added are displayed when you refresh the page.
 
-For more information about the credentials you created for the application to connect to your service, see [Available Credentials](/docs/ComposeForScyllaDB?topic=compose-for-scylladb-ibmcloud-cf-app).
+For more information about the credentials you created for the application to connect to your service, see [Available Credentials](/docs/ComposeForScyllaDB?topic=ComposeForScyllaDB-ibmcloud-cf-app).
 
 ## Next steps
 
@@ -176,9 +176,9 @@ To understand more about how the [sample app](https://github.com/IBM-Cloud/compo
 
 To start exploring your {{site.data.keyword.composeForScyllaDB}} service, see the following topics about the service dashboard:
 
-- [Dashboard Overview](/docs/ComposeForScyllaDB?topic=compose-for-scylladb-dashboard-overview)
-- [Backups](/docs/ComposeForScyllaDB?topic=compose-for-scylladb-dashboard-backups)
-- [Settings](/docs/ComposeForScyllaDB?topic=compose-for-scylladb-dashboard-settings)
+- [Dashboard Overview](/docs/ComposeForScyllaDB?topic=ComposeForScyllaDB-dashboard-overview)
+- [Backups](/docs/ComposeForScyllaDB?topic=ComposeForScyllaDB-dashboard-backups)
+- [Settings](/docs/ComposeForScyllaDB?topic=ComposeForScyllaDB-dashboard-settings)
 
 
 [ibm_cloud_signup_url]: https://ibm.biz/compose-for-scylladb-signup

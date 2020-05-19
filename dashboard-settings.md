@@ -6,7 +6,7 @@ lastupdated: "2017-12-11"
 
 keywords: scylla, compose
 
-subcollection: compose-for-scylladb
+subcollection: ComposeForScyllaDB
 
 ---
 
@@ -69,4 +69,4 @@ Scylla services are provisioned with an SSH portal to enable nodetool administra
 
 ![SSH Keys](./images/scylla-portal-ssh-show.png "The SSH Key fields.")
 
-Information on how nodetool works with your scylla service is in [Using Nodetool](/docs/ComposeForScyllaDB?topic=compose-for-scylladb-scylla-nodetool).
+Information on how nodetool works with your scylla service is in [Using Nodetool](/docs/ComposeForScyllaDB?topic=ComposeForScyllaDB-scylla-nodetool).

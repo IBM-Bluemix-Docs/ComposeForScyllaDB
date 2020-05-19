@@ -6,7 +6,7 @@ lastupdated: "2018-05-09"
 
 keywords: scylla, compose
 
-subcollection: compose-for-scylladb
+subcollection: ComposeForScyllaDB
 
 ---
 

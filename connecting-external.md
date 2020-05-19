@@ -6,7 +6,7 @@ lastupdated: "2018-02-28"
 
 keywords: scylla, compose
 
-subcollection: compose-for-scylladb
+subcollection: ComposeForScyllaDB
 
 ---
 
@@ -88,7 +88,7 @@ To connect your python application, use the [DataStax Python Driver](https://git
 pip install cassandra-driver
 ```
 
-The driver expects to use a certificate when TLS/SSL is enabled. You can find instructions for using a certificate with your service on the [Using Certificates](/docs/ComposeForScyllaDB?topic=compose-for-scylladb-scylla-certificates) page. All the other information that the driver needs can be found in the _Connection Strings_ of the service _Overview_.
+The driver expects to use a certificate when TLS/SSL is enabled. You can find instructions for using a certificate with your service on the [Using Certificates](/docs/ComposeForScyllaDB?topic=ComposeForScyllaDB-scylla-certificates) page. All the other information that the driver needs can be found in the _Connection Strings_ of the service _Overview_.
 
 The example code performs similarly to the Java code, by preparing a statement and executing an insert.
 
